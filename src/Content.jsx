@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { Signup } from "./UserSignup";
 
 export function Content() {
   const handleTattooerSubmit = (event) => {
@@ -13,39 +14,6 @@ export function Content() {
   };
 
   // USER LOG FUNCTIONS
-  const jwt = localStorage.getItem("jwt");
-  if (jwt) {
-    axios.defaults.headers.common["Authorization"] = `Bearer ${jwt}`;
-  }
-
-  const [errors, setErrors] = useState([]);
-
-  const handleUserLogInSubmit = (event) => {
-    event.preventDefault();
-    setErrors([]);
-    const params = new FormData(event.target);
-    axios
-      .post("http://localhost:3000/sessions.json", params)
-      .then((response) => {
-        console.log(response.data);
-        axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
-        localStorage.setItem("jwt", response.data.jwt);
-        event.target.reset();
-        // window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
-      })
-      .catch((error) => {
-        console.log(error.response);
-        setErrors(["Invalid email or password"]);
-      });
-  };
-
-  const handleClick = (event) => {
-    event.preventDefault();
-    delete axios.defaults.headers.common["Authorization"];
-    localStorage.removeItem("jwt");
-    // window.location.href = "/";
-  };
-  // END OF USER LOG FUNCTION
 
   // TATTOOER LOG FUNCTIONS
   // const jwt = localStorage.getItem("jwt");
@@ -123,27 +91,11 @@ export function Content() {
       <br />
       <hr />
       <br />
-      {/* USER LOG IN */}
-      <div id="login">
-        <h1>User Log In</h1>
-        <ul>
-          {errors.map((error) => (
-            <li key={error}>{error}</li>
-          ))}
-        </ul>
-        <form onSubmit={handleUserLogInSubmit}>
-          <div>
-            Email: <input name="email" type="email" />
-          </div>
-          <div>
-            Password: <input name="password" type="password" />
-          </div>
-          <button type="submit">Login</button>
-          <a href="#" onClick={handleClick} id="logout">
-            Log Out
-          </a>
-        </form>
-      </div>
+
+      <a href="#" onClick={handleClick} id="logout">
+        Log Out
+      </a>
+
       {/* END USER LOG IN */}
       <br />
       <br />
