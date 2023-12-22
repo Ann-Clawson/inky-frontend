@@ -7,4 +7,10 @@ export function UserLogout() {
     localStorage.removeItem("jwt");
     // window.location.href = "/";
   };
+
+  return (
+    <a href="#" onClick={handleClick} id="logout">
+      Log Out
+    </a>
+  );
 }

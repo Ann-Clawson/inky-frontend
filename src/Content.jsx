@@ -87,20 +87,7 @@ export function Content() {
         </form>
       </div>
       {/* END TATTOOER SIGN UP */}
-      <br />
-      <br />
-      <hr />
-      <br />
 
-      <a href="#" onClick={handleClick} id="logout">
-        Log Out
-      </a>
-
-      {/* END USER LOG IN */}
-      <br />
-      <br />
-      <hr />
-      <br />
       {/* TATTOOER LOG IN */}
       <div id="login">
         <h1>Tattooer Log In</h1>
