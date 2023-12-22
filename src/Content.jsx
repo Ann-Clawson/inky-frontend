@@ -18,10 +18,6 @@ export function Content() {
 
   return (
     <div>
-      <br />
-      <br />
-      <hr />
-      <br />
       {/* USER UPDATE */}
       <div id="signup">
         <h1>Users Update</h1>
