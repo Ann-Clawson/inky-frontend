@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export function Signup() {
+export function UserSignup() {
   const handleUserSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);

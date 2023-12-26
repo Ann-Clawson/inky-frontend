@@ -1,52 +1,33 @@
 import axios from "axios";
 import { useState } from "react";
 import { UserSignup } from "./UserSignup";
+import { UserUpdate } from "./UserUpdate";
 import { UserLogin } from "./UserLogin";
 import { UserLogout } from "./UserLogout";
 import { TattooerSignup } from "./TattooerSignup";
 import { TattooerLogin } from "./TattooerLogin";
+import { Header } from "./Header";
 
 export function Content() {
-  // USER UPDATE FUNCTIONS
-  const handleUserUpdateSubmit = (event) => {
-    event.preventDefault();
-    const params = new FormData(event.target);
-    props.onUpdateUser(props.user.id, params);
-    event.target.reset();
-  };
-  // END OF USER UPDATE FUNCTIONS
+  const handleUpdateUser = (id, params) => {
+    axios.patch(`http://localhost:3000/users/${id}.json`, params).then((response) => {
+      setUsers(
+        users.map((user) => {
+          if (user.id === response.data.id) {
+            return response.data;
+          } else {
+            return user;
+          }
+        })
+      );
+      setCurrentUser(response.data);
+      setIsUserShowVisible(false);
+    });
 
-  return (
-    <div>
-      {/* USER UPDATE */}
-      <div id="signup">
-        <h1>Users Update</h1>
-        <form onSubmit={handleUserUpdateSubmit}>
-          <div>
-            First Name: <input name="first_name" type="text" />
-          </div>
-          <div>
-            Last Name: <input name="last_name" type="text" />
-          </div>
-          <div>
-            Address: <input name="address" type="text" />
-          </div>
-          <div>
-            Phone Number: <input name="phone_number" type="text" />
-          </div>
-          <div>
-            Email: <input name="email" type="email" />
-          </div>
-          <div>
-            Password: <input name="password" type="password" />
-          </div>
-          <div>
-            Password confirmation: <input name="password_confirmation" type="password" />
-          </div>
-          <button type="submit">Update</button>
-        </form>
-      </div>
-      {/* END USER UPDATE */}
-    </div>
-  );
+    return (
+      <main>
+        <UserUpdate onUpdateUser={handleUpdateUser} />
+      </main>
+    );
+  };
 }
