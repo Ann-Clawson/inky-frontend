@@ -6,9 +6,12 @@ import { UserLogin } from "./UserLogin";
 import { UserLogout } from "./UserLogout";
 import { TattooerSignup } from "./TattooerSignup";
 import { TattooerLogin } from "./TattooerLogin";
-import { Header } from "./Header";
+import { TattooerLogout } from "./TattooerLogout";
 
 export function Content() {
+  const [users, setUsers] = useState([]);
+  const [currentUser, setCurrentUser] = useState({});
+
   const handleUpdateUser = (id, params) => {
     axios.patch(`http://localhost:3000/users/${id}.json`, params).then((response) => {
       setUsers(
@@ -21,13 +24,19 @@ export function Content() {
         })
       );
       setCurrentUser(response.data);
-      setIsUserShowVisible(false);
+      // setIsUserShowVisible(false);
     });
-
-    return (
-      <main>
-        <UserUpdate onUpdateUser={handleUpdateUser} />
-      </main>
-    );
   };
+
+  return (
+    <div>
+      <UserLogin />
+      <UserLogout />
+      <UserSignup />
+      <TattooerLogin />
+      <TattooerLogout />
+      <TattooerSignup />
+      <UserUpdate onUpdateUser={handleUpdateUser} user={currentUser} />
+    </div>
+  );
 }
