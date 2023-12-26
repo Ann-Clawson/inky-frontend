@@ -44,9 +44,6 @@ export function TattooerLogin() {
           Password: <input name="password" type="password" />
         </div>
         <button type="submit">Login</button>
-        <a href="#" onClick={handleTattooerLogInSubmit} id="logout">
-          Log Out
-        </a>
       </form>
     </div>
   );
