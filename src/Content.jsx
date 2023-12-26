@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { UserSignup } from "./UserSignup";
 // import { UserUpdate } from "./UserUpdate";
 import { UserLogin } from "./UserLogin";
@@ -62,6 +62,17 @@ export function Content() {
     });
   };
 
+  const [tattooers, setTattooers] = useState([]);
+
+  const handleIndexTattooers = () => {
+    axios.get("http://localhost:3000/tattooers.json").then((response) => {
+      // console.log(response.data);
+      setTattooers(response.data);
+    });
+  };
+
+  useEffect(handleIndexTattooers, []);
+
   return (
     <div>
       <UserLogin />
@@ -70,7 +81,7 @@ export function Content() {
       <TattooerLogin />
       <TattooerLogout />
       <TattooerSignup />
-      <Application onCreateApplication={handleCreateApplication} />
+      <Application onCreateApplication={handleCreateApplication} tattooers={tattooers} />
       {/* <UserDashboard /> */}
       {/* <UserUpdate onUpdateUser={handleUpdateUser} user={currentUser} />
       <TattooerUpdate onUpdate={handleUpdateTattooer} tattooer={currentTattooer} /> */}
