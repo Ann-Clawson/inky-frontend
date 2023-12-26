@@ -1,13 +1,15 @@
 import axios from "axios";
 import { useState } from "react";
 import { UserSignup } from "./UserSignup";
-import { UserUpdate } from "./UserUpdate";
+// import { UserUpdate } from "./UserUpdate";
 import { UserLogin } from "./UserLogin";
 import { UserLogout } from "./UserLogout";
 import { TattooerSignup } from "./TattooerSignup";
 import { TattooerLogin } from "./TattooerLogin";
 import { TattooerLogout } from "./TattooerLogout";
-import { TattooerUpdate } from "./TattooerUpdate";
+// import { TattooerUpdate } from "./TattooerUpdate";
+// import { UserDashboard } from "./UserDashboard";
+import { Application } from "./Application";
 
 export function Content() {
   // UPDATE USER FUNCTIONS
@@ -51,6 +53,15 @@ export function Content() {
   //   });
   // };
 
+  const [applications, setApplications] = useState([]);
+
+  const handleCreateApplication = (params) => {
+    axios.post("http://localhost:3000/applications.json", params).then((response) => {
+      console.log(response);
+      setApplications([response.data, ...applications]);
+    });
+  };
+
   return (
     <div>
       <UserLogin />
@@ -59,6 +70,8 @@ export function Content() {
       <TattooerLogin />
       <TattooerLogout />
       <TattooerSignup />
+      <Application onCreateApplication={handleCreateApplication} />
+      {/* <UserDashboard /> */}
       {/* <UserUpdate onUpdateUser={handleUpdateUser} user={currentUser} />
       <TattooerUpdate onUpdate={handleUpdateTattooer} tattooer={currentTattooer} /> */}
     </div>

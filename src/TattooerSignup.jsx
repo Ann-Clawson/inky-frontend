@@ -12,7 +12,7 @@ export function TattooerSignup() {
   };
 
   return (
-    <div id="signup">
+    <div>
       <h1>Tattooers Sign Up</h1>
       <form onSubmit={handleTattooerSubmit}>
         <div>

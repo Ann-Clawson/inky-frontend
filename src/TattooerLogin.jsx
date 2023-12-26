@@ -29,7 +29,7 @@ export function TattooerLogin() {
   };
 
   return (
-    <div id="login">
+    <div>
       <h1>Tattooer Log In</h1>
       <ul>
         {errors.map((error) => (

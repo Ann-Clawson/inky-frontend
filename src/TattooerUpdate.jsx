@@ -8,9 +8,9 @@ export function TattooerUpdate(props) {
   };
 
   return (
-    <div id="signup">
+    <div>
       <h1>Tattooers Update</h1>
-      <h4>Update your profile => {props.tattooer.name}</h4>
+      <h4>Update your profile {props.tattooer.name}</h4>
       <form onSubmit={handleTattooerUpdateSubmit}>
         <div>
           First Name: <input name="first_name" type="text" defaultValue={props.tattooer.first_name} />
