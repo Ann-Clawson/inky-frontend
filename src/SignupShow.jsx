@@ -9,7 +9,9 @@ export function SignupShow(props) {
         User
       </Link>
       <br />
-      <Link to="/tattooersignup">Tattooer</Link>
+      <Link to="/tattooersignup" onClick={props.onClose}>
+        Tattooer
+      </Link>
     </div>
   );
 }
