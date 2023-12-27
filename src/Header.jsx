@@ -7,12 +7,14 @@ export function Header(props) {
   if (localStorage.jwt === undefined) {
     authenticationLinks = (
       <>
-        <Link onClick={() => props.onSignupShow()}>Sign Up</Link> |<Link to="/login">Log In</Link>
+        <Link onClick={() => props.onApplyShow()}>Apply</Link> |{" "}
+        <Link onClick={() => props.onSignupShow()}>Sign Up</Link> | <Link to="/login">Log In</Link>
       </>
     );
   } else {
     authenticationLinks = (
       <>
+        <Link to="/apply">Apply</Link>
         <Logout />
       </>
     );
