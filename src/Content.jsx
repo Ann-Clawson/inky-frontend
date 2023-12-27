@@ -10,6 +10,7 @@ import { TattooerLogout } from "./TattooerLogout";
 // import { TattooerUpdate } from "./TattooerUpdate";
 // import { UserDashboard } from "./UserDashboard";
 import { Application } from "./Application";
+import { Routes, Route } from "react-router-dom";
 
 export function Content() {
   // UPDATE USER FUNCTIONS
