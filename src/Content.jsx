@@ -10,6 +10,8 @@ import { Home } from "./Home";
 // import { TattooerUpdate } from "./TattooerUpdate";
 // import { UserDashboard } from "./UserDashboard";
 import { Application } from "./Application";
+import { SignupShow } from "./SignupShow";
+import { Modal } from "./Modal";
 import { Routes, Route } from "react-router-dom";
 
 export function Content() {
@@ -72,12 +74,22 @@ export function Content() {
     });
   };
 
+  const [isSignupShowVisible, setIsSignupShowVisible] = useState(false);
+
+  const handleSignupShow = () => {
+    setIsSignupShowVisible(true);
+  };
+
+  const handleSignupClose = () => {
+    setIsSignupShowVisible(false);
+  };
+
   useEffect(handleIndexTattooers, []);
 
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home onSignupShow={handleSignupShow} />} />
         <Route path="/userlogin" element={<UserLogin />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/usersignup" element={<UserSignup />} />
@@ -88,6 +100,9 @@ export function Content() {
           element={<Application onCreateApplication={handleCreateApplication} tattooers={tattooers} />}
         />
       </Routes>
+      <Modal show={isSignupShowVisible} onClose={handleSignupClose}>
+        <SignupShow />
+      </Modal>
 
       {/* <UserDashboard /> */}
       {/* <UserUpdate onUpdateUser={handleUpdateUser} user={currentUser} />
