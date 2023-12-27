@@ -15,7 +15,7 @@ export function Header(props) {
   } else {
     authenticationLinks = (
       <>
-        <Link to="/apply">Apply</Link>
+        <Link to="/apply">Apply</Link> |
         <Logout />
       </>
     );

@@ -1,13 +1,31 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
 export function Application(props) {
+  const [results, setResults] = useState();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
     // eslint-disable-next-line react/prop-types
     props.onCreateApplication(params);
     event.target.reset();
-    // window.location.href = "/applications";
+    // window.location.href = "/apply";
+
+    function getRandomArbitrary(min, max) {
+      return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    let score = getRandomArbitrary(600, 850);
+    if (score < 700) {
+      setResults(
+        <>
+          <h3>less than 700</h3>
+        </>
+      );
+    } else {
+      setResults(<h3>greater than 700</h3>);
+    }
   };
 
   const [searchFilter, setSearchFilter] = useState("");
@@ -48,6 +66,7 @@ export function Application(props) {
         </div>
         <button type="submit">Submit</button>
       </form>
+      {results}
     </div>
   );
 }
