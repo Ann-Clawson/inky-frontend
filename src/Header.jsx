@@ -1,13 +1,13 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { Logout } from "./Logout";
 
-export function Header() {
+export function Header(props) {
   let authenticationLinks;
   if (localStorage.jwt === undefined) {
     authenticationLinks = (
       <>
-        {/* <a onClick={() => props.onSignupShow()}>Sign Up</a> |  */}
-        <Link to="/login">Log In</Link>
+        <Link onClick={() => props.onSignupShow()}>Sign Up</Link> |<Link to="/login">Log In</Link>
       </>
     );
   } else {
