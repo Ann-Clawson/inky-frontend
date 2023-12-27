@@ -76,13 +76,19 @@ export function Content() {
 
   return (
     <div>
-      <UserLogin />
-      <UserLogout />
-      <UserSignup />
-      <TattooerLogin />
-      <TattooerLogout />
-      <TattooerSignup />
-      <Application onCreateApplication={handleCreateApplication} tattooers={tattooers} />
+      <Routes>
+        <Route path="/userlogin" element={<UserLogin />} />
+        <Route path="/userlogout" element={<UserLogout />} />
+        <Route path="/usersignup" element={<UserSignup />} />
+        <Route path="/tattooerlogin" element={<TattooerLogin />} />
+        <Route path="/tattooerlogout" element={<TattooerLogout />} />
+        <Route path="/tattooersignup" element={<TattooerSignup />} />
+        <Route
+          path="/apply"
+          element={<Application onCreateApplication={handleCreateApplication} tattooers={tattooers} />}
+        />
+      </Routes>
+
       {/* <UserDashboard /> */}
       {/* <UserUpdate onUpdateUser={handleUpdateUser} user={currentUser} />
       <TattooerUpdate onUpdate={handleUpdateTattooer} tattooer={currentTattooer} /> */}
