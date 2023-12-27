@@ -23,7 +23,7 @@ function App() {
         <Content />
         <Footer />
         <Modal show={isSignupShowVisible} onClose={handleSignupClose}>
-          <SignupShow />
+          <SignupShow onClose={handleSignupClose} />
         </Modal>
       </BrowserRouter>
     </div>
