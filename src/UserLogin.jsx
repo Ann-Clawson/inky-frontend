@@ -20,7 +20,7 @@ export function UserLogin() {
         axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
         localStorage.setItem("jwt", response.data.jwt);
         event.target.reset();
-        // window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
+        window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
       })
       .catch((error) => {
         console.log(error.response);

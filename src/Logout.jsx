@@ -1,11 +1,11 @@
 import axios from "axios";
 
-export function UserLogout() {
+export function Logout() {
   const handleClick = (event) => {
     event.preventDefault();
     delete axios.defaults.headers.common["Authorization"];
     localStorage.removeItem("jwt");
-    // window.location.href = "/";
+    window.location.href = "/";
   };
 
   return (

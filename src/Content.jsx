@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import { UserSignup } from "./UserSignup";
 // import { UserUpdate } from "./UserUpdate";
 import { UserLogin } from "./UserLogin";
-import { UserLogout } from "./UserLogout";
+import { Logout } from "./Logout";
 import { TattooerSignup } from "./TattooerSignup";
 import { TattooerLogin } from "./TattooerLogin";
-import { TattooerLogout } from "./TattooerLogout";
+import { Home } from "./Home";
 // import { TattooerUpdate } from "./TattooerUpdate";
 // import { UserDashboard } from "./UserDashboard";
 import { Application } from "./Application";
@@ -77,11 +77,11 @@ export function Content() {
   return (
     <div>
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/userlogin" element={<UserLogin />} />
-        <Route path="/userlogout" element={<UserLogout />} />
+        <Route path="/logout" element={<Logout />} />
         <Route path="/usersignup" element={<UserSignup />} />
         <Route path="/tattooerlogin" element={<TattooerLogin />} />
-        <Route path="/tattooerlogout" element={<TattooerLogout />} />
         <Route path="/tattooersignup" element={<TattooerSignup />} />
         <Route
           path="/apply"

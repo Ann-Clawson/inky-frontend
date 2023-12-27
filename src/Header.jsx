@@ -1,8 +1,26 @@
+import { Link } from "react-router-dom";
+import { Logout } from "./Logout";
+
 export function Header() {
+  let authenticationLinks;
+  if (localStorage.jwt === undefined) {
+    authenticationLinks = (
+      <>
+        <Link to="/signup">Sign Up</Link> | <Link to="/login">Log In</Link>
+      </>
+    );
+  } else {
+    authenticationLinks = (
+      <>
+        <Logout />
+      </>
+    );
+  }
+
   return (
     <header>
       <nav>
-        <a href="#">Home</a> | <a href="#">Link</a>
+        <Link to="/">Home</Link> | {authenticationLinks}
       </nav>
     </header>
   );
