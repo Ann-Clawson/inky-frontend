@@ -28,29 +28,20 @@ export function Application(props) {
     }
   };
 
-  const [searchFilter, setSearchFilter] = useState("");
-
   return (
     <div>
       <h1>Financing Application</h1>
       <form onSubmit={handleSubmit}>
         <div>
           Tattooer:{" "}
-          <input
-            name="tattooer_id"
-            type="text"
-            required
-            list="tattooers"
-            value={searchFilter}
-            onChange={(event) => setSearchFilter(event.target.value)}
-          />
-          <datalist id="tattooers">
-            {searchFilter === "" ? (
-              <option></option>
-            ) : (
-              props.tattooers.map((tattooer) => <option key={tattooer.id}>{tattooer.first_name}</option>)
-            )}
-          </datalist>
+          <select id="tattooers-select" name="tattooer_id">
+            <option value="">Select a tattooer</option>
+            {props.tattooers.map((tattooer) => (
+              <option key={tattooer.id} value={tattooer.id}>
+                {tattooer.first_name} {tattooer.last_name}
+              </option>
+            ))}
+          </select>
         </div>
         <div>
           Amount: <input name="amount" type="text" required />
