@@ -4,6 +4,7 @@ import { Footer } from "./Footer";
 import { Modal } from "./Modal";
 import { SignupShow } from "./SignupShow";
 import { ApplyShow } from "./ApplyShow";
+import { LoginShow } from "./LoginShow";
 import { BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 
@@ -27,10 +28,20 @@ function App() {
   const handleApplyClose = () => {
     setIsApplyShowVisible(false);
   };
+
+  const [isLoginShowVisible, setIsLoginShowVisible] = useState(false);
+
+  const handleLoginShow = () => {
+    setIsLoginShowVisible(true);
+  };
+
+  const handleLoginClose = () => {
+    setIsLoginShowVisible(false);
+  };
   return (
     <div>
       <BrowserRouter>
-        <Header onSignupShow={handleSignupShow} onApplyShow={handleApplyShow} />
+        <Header onSignupShow={handleSignupShow} onApplyShow={handleApplyShow} onLoginShow={handleLoginShow} />
         <Content />
         <Footer />
         <Modal show={isSignupShowVisible} onClose={handleSignupClose}>
@@ -38,6 +49,9 @@ function App() {
         </Modal>
         <Modal show={isApplyShowVisible} onClose={handleApplyClose}>
           <ApplyShow />
+        </Modal>
+        <Modal show={isLoginShowVisible} onClose={handleLoginClose}>
+          <LoginShow onClose={handleLoginClose} />
         </Modal>
       </BrowserRouter>
     </div>

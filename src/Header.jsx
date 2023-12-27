@@ -8,7 +8,8 @@ export function Header(props) {
     authenticationLinks = (
       <>
         <Link onClick={() => props.onApplyShow()}>Apply</Link> |{" "}
-        <Link onClick={() => props.onSignupShow()}>Sign Up</Link> | <Link to="/login">Log In</Link>
+        <Link onClick={() => props.onSignupShow()}>Sign Up</Link> |{" "}
+        <Link onClick={() => props.onLoginShow()}>Log In</Link>
       </>
     );
   } else {
