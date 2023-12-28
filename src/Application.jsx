@@ -23,35 +23,35 @@ export function Application(props) {
 
     let interestRate;
     if (score < 700 && numOfMonths === 6) {
-      interestRate = 10;
+      interestRate = 0.1;
     } else if (score < 700 && numOfMonths === 12) {
-      interestRate = 12;
-    } else if (score > 700 && score < 800 && numOfMonths === 6) {
-      interestRate = 8;
+      interestRate = 0.12;
+    } else if (score > 700 && score < 800 && numOfMonths === 0.06) {
+      interestRate = 0.08;
     } else if (score > 700 && score < 800 && numOfMonths === 12) {
-      interestRate = 10;
+      interestRate = 0.1;
     } else if (score > 800 && numOfMonths === 6) {
-      interestRate = 6;
+      interestRate = 0.06;
     } else {
-      interestRate = 8;
+      interestRate = 0.08;
     }
 
-    if (score < 700) {
-      setResults(
-        <>
-          <h2>Approved!</h2>
-          <h3>less than 700</h3>
-          {/* <h3>{numOfMonths}</h3> */}
-        </>
-      );
-    } else {
-      setResults(
-        <div>
-          <h3>greater than 700</h3>
-          {/* <h3>{numOfMonths}</h3> */}
-        </div>
-      );
-    }
+    const payment = Math.floor((amount * interestRate + amount) / numOfMonths);
+
+    console.log(amount);
+    console.log(numOfMonths);
+    console.log(interestRate);
+    console.log(payment);
+
+    setResults(
+      <>
+        <h2>Approved!</h2>
+        <h3>
+          Your terms: ${amount}, {numOfMonths} months, {interestRate * 100}% interest rate, monthly payments of $
+          {payment}.
+        </h3>
+      </>
+    );
   };
 
   return (
