@@ -10,21 +10,47 @@ export function Application(props) {
     // eslint-disable-next-line react/prop-types
     props.onCreateApplication(params);
     event.target.reset();
-    // window.location.href = "/apply";
 
+    // math for loan terms
     function getRandomArbitrary(min, max) {
       return Math.floor(Math.random() * (max - min) + min);
     }
+    const score = getRandomArbitrary(600, 850);
 
-    let score = getRandomArbitrary(600, 850);
+    const amount = parseInt(params.get("amount"));
+
+    const numOfMonths = parseInt(params.get("number_of_months"));
+
+    let interestRate;
+    if (score < 700 && numOfMonths === 6) {
+      interestRate = 10;
+    } else if (score < 700 && numOfMonths === 12) {
+      interestRate = 12;
+    } else if (score > 700 && score < 800 && numOfMonths === 6) {
+      interestRate = 8;
+    } else if (score > 700 && score < 800 && numOfMonths === 12) {
+      interestRate = 10;
+    } else if (score > 800 && numOfMonths === 6) {
+      interestRate = 6;
+    } else {
+      interestRate = 8;
+    }
+
     if (score < 700) {
       setResults(
         <>
+          <h2>Approved!</h2>
           <h3>less than 700</h3>
+          {/* <h3>{numOfMonths}</h3> */}
         </>
       );
     } else {
-      setResults(<h3>greater than 700</h3>);
+      setResults(
+        <div>
+          <h3>greater than 700</h3>
+          {/* <h3>{numOfMonths}</h3> */}
+        </div>
+      );
     }
   };
 
@@ -47,7 +73,13 @@ export function Application(props) {
           Amount: <input name="amount" type="text" required />
         </div>
         <div>
-          Number of Months: <input name="number_of_months" type="text" required />
+          Number of Months:
+          <select id="number-of-months-select" name="number_of_months">
+            <option value="">Select a term</option>
+            <option value="6">6</option>
+            <option value="12">12</option>
+          </select>
+          {/* <input name="number_of_months" type="text" required /> */}
         </div>
         <div>
           Description: <input name="description" type="text" required />
@@ -55,6 +87,7 @@ export function Application(props) {
         <div>
           Date of Appointment: <input name="date_of_appt" type="text" required />
         </div>
+        <input type="hidden" name="approved" value="true" />
         <button type="submit">Submit</button>
       </form>
       {results}
