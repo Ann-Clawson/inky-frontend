@@ -15,7 +15,10 @@ export function Header(props) {
   } else {
     authenticationLinks = (
       <>
-        <Link to="/apply">Apply</Link> |
+        <Link to="/apply" onClick={() => window.location.reload()}>
+          Apply
+        </Link>{" "}
+        |
         <Logout />
       </>
     );
