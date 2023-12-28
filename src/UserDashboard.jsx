@@ -1,3 +1,7 @@
-export function UserDashboard(props) {
-  return <h1>Howdy {current_user.first_name}</h1>;
+export function UserDashboard() {
+  let user = localStorage.getItem("user");
+
+  let currentUser = () => {};
+
+  return <h1>Howdy {user}</h1>;
 }
