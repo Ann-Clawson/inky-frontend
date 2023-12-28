@@ -11,6 +11,8 @@ export function Application(props) {
     props.onCreateApplication(params);
     event.target.reset();
 
+    const isApproved = params.get("approved") === "true";
+
     // math for loan terms
     function getRandomArbitrary(min, max) {
       return Math.floor(Math.random() * (max - min) + min);
@@ -38,20 +40,25 @@ export function Application(props) {
 
     const payment = Math.floor((amount * interestRate + amount) / numOfMonths);
 
-    console.log(amount);
-    console.log(numOfMonths);
-    console.log(interestRate);
-    console.log(payment);
+    console.log(isApproved);
+    // console.log(amount);
+    // console.log(numOfMonths);
+    // console.log(interestRate);
+    // console.log(payment);
 
-    setResults(
-      <>
-        <h2>Approved!</h2>
-        <h3>
-          Your terms: ${amount}, {numOfMonths} months, {interestRate * 100}% interest rate, monthly payments of $
-          {payment}.
-        </h3>
-      </>
-    );
+    if (isApproved) {
+      setResults(
+        <>
+          <h2>Approved!</h2>
+          <h3>
+            Your terms: ${amount}, {numOfMonths} months, {interestRate * 100}% interest rate, monthly payments of $
+            {payment}.
+          </h3>
+        </>
+      );
+    } else {
+      setResults(<h3>Your application requires further review. You will receive a letter from us, one day.</h3>);
+    }
   };
 
   return (
@@ -79,7 +86,6 @@ export function Application(props) {
             <option value="6">6</option>
             <option value="12">12</option>
           </select>
-          {/* <input name="number_of_months" type="text" required /> */}
         </div>
         <div>
           Description: <input name="description" type="text" required />
@@ -87,7 +93,7 @@ export function Application(props) {
         <div>
           Date of Appointment: <input name="date_of_appt" type="text" required />
         </div>
-        <input type="hidden" name="approved" value="true" />
+        <input type="hidden" name="approved" value="false" />
         <button type="submit">Submit</button>
       </form>
       {results}
