@@ -1,7 +1,22 @@
+import axios from "axios";
+import { useState, useEffect } from "react";
+
 export function UserDashboard() {
-  let user = localStorage.getItem("user");
+  const [currentUser, setCurrentUser] = useState({});
 
-  let currentUser = () => {};
+  let userID = localStorage.getItem("user");
+  console.log(userID);
 
-  return <h1>Howdy {user}</h1>;
+  const getUser = (userID) => {
+    axios.get(`http://localhost:3000/users/${userID}.json`).then((response) => {
+      console.log(response.data);
+      setCurrentUser(response.data);
+    });
+  };
+
+  console.log(currentUser, "name");
+
+  useEffect(getUser, []);
+
+  return <h1>Howdy {currentUser.first_name}</h1>;
 }

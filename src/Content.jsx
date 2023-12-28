@@ -13,14 +13,6 @@ import { UserDashboard } from "./UserDashboard";
 export function Content() {
   const [applications, setApplications] = useState([]);
 
-  const [currentUser, setCurrentUser] = useState([]);
-
-  const handleGetCurrentUser = (params) => {
-    axios.get(`http://localhost:3000/users/${response.data.user_id}.json`, params).then((response) => {
-      setCurrentUser([response.data]);
-    });
-  };
-
   const handleCreateApplication = (params) => {
     axios.post("http://localhost:3000/applications.json", params).then((response) => {
       console.log(response);
@@ -43,7 +35,7 @@ export function Content() {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/userlogin" element={<UserLogin onGetCurrentUser={handleGetCurrentUser} />} />
+        <Route path="/userlogin" element={<UserLogin />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/usersignup" element={<UserSignup />} />
         <Route path="/tattooerlogin" element={<TattooerLogin />} />
@@ -52,7 +44,7 @@ export function Content() {
           path="/apply"
           element={<Application onCreateApplication={handleCreateApplication} tattooers={tattooers} />}
         />
-        <Route path="/userdashboard" element={<UserDashboard currentUser={currentUser} />} />
+        <Route path="/userdashboard" element={<UserDashboard />} />
       </Routes>
     </div>
   );

@@ -21,8 +21,6 @@ export function UserLogin() {
         axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
         localStorage.setItem("jwt", response.data.jwt);
         localStorage.setItem("user", response.data.user_id);
-        // console.log(response.data.user_id);
-        // props.onGetCurrentUser(response.data.user_id, params);
         event.target.reset();
         // window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
       })
