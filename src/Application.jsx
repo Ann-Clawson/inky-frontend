@@ -1,12 +1,8 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export function Application(props) {
-  // const handlePageRefresh = () => {
-  //   window.location.reload();
-  // };
-
-  // useEffect(handlePageRefresh, []);
+  const [results, setResults] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -22,17 +18,17 @@ export function Application(props) {
 
     let score = getRandomArbitrary(600, 850);
     if (score < 700) {
-      setApplyPage(
+      setResults(
         <>
           <h3>less than 700</h3>
         </>
       );
     } else {
-      setApplyPage(<h3>greater than 700</h3>);
+      setResults(<h3>greater than 700</h3>);
     }
   };
 
-  const [applyPage, setApplyPage] = useState(
+  return (
     <div>
       <h1>Financing Application</h1>
       <form onSubmit={handleSubmit}>
@@ -61,8 +57,7 @@ export function Application(props) {
         </div>
         <button type="submit">Submit</button>
       </form>
+      {results}
     </div>
   );
-
-  return <div>{applyPage}</div>;
 }
