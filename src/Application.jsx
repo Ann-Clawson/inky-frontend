@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export function Application(props) {
   const [results, setResults] = useState("");
+  const [approvedValue, setApprovedValue] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -11,13 +12,15 @@ export function Application(props) {
     props.onCreateApplication(params);
     event.target.reset();
 
-    const isApproved = params.get("approved") === "true";
-
     // math for loan terms
     function getRandomArbitrary(min, max) {
       return Math.floor(Math.random() * (max - min) + min);
     }
-    const score = getRandomArbitrary(600, 850);
+    // const score = getRandomArbitrary(600, 850);
+    const score = 400;
+
+    const isApproved = score >= 600;
+    setApprovedValue(isApproved ? "true" : "false");
 
     const amount = parseInt(params.get("amount"));
 
@@ -39,8 +42,6 @@ export function Application(props) {
     }
 
     const payment = Math.floor((amount * interestRate + amount) / numOfMonths);
-
-    console.log(isApproved);
     // console.log(amount);
     // console.log(numOfMonths);
     // console.log(interestRate);
@@ -60,6 +61,8 @@ export function Application(props) {
       setResults(<h3>Your application requires further review. You will receive a letter from us, one day.</h3>);
     }
   };
+
+  console.log(approvedValue);
 
   return (
     <div>
@@ -93,7 +96,7 @@ export function Application(props) {
         <div>
           Date of Appointment: <input name="date_of_appt" type="text" required />
         </div>
-        <input type="hidden" name="approved" value="false" />
+        <input type="hidden" name="approved" value={approvedValue} />
         <button type="submit">Submit</button>
       </form>
       {results}
