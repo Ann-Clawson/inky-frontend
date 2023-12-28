@@ -18,5 +18,10 @@ export function UserDashboard() {
 
   useEffect(getUser, []);
 
-  return <h1>Howdy {currentUser.first_name}</h1>;
+  return (
+    <div>
+      <h1>Howdy {currentUser.first_name}</h1>
+      <h4>Here is a list of your applications:</h4>
+    </div>
+  );
 }

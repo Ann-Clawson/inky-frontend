@@ -65,8 +65,6 @@ export function Application(props) {
     }
   };
 
-  console.log(approvedValue);
-
   return (
     <div>
       <h1>Financing Application</h1>
