@@ -22,7 +22,7 @@ export function UserLogin() {
         localStorage.setItem("jwt", response.data.jwt);
         localStorage.setItem("user", response.data.user_id);
         event.target.reset();
-        // window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
+        window.location.href = "/userdashboard"; // Change this to hide a modal, redirect to a specific page, etc.
       })
       .catch((error) => {
         console.log(error.response);

@@ -17,7 +17,7 @@ export function Application(props) {
       return Math.floor(Math.random() * (max - min) + min);
     }
     // const score = getRandomArbitrary(600, 850);
-    const score = 400;
+    const score = 600;
 
     const isApproved = score >= 600;
     setApprovedValue(isApproved ? "true" : "false");
@@ -55,6 +55,9 @@ export function Application(props) {
             Your terms: ${amount}, {numOfMonths} months, {interestRate * 100}% interest rate, monthly payments of $
             {payment}.
           </h3>
+          <h4>
+            Head on over to your <a href="/userdashboard/">DASHBOARD</a>
+          </h4>
         </>
       );
     } else {
