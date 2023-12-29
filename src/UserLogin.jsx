@@ -45,7 +45,7 @@ export function UserLogin() {
     //       inactivityTimeout = setTimeout(() => {
     //         // Log out the user
     //         handleLogout();
-    //       }, 300000); // 5 minutes in milliseconds (adjust as needed)
+    //       }, 300000); // 5 minutes in milliseconds
     //     };
 
     //     const handleUserActivity = () => {
@@ -53,19 +53,18 @@ export function UserLogin() {
     //     };
 
     //     const handleLogout = () => {
-    //       // Perform logout actions (e.g., clear user session)
+    //
     //       setIsLoggedIn(false);
-    //       // You may also want to redirect the user to the login page
+    //       //redirect the user to the login page
     //     };
-
-    //     // Attach event listeners
+    //
     //     window.addEventListener('mousemove', handleUserActivity);
     //     window.addEventListener('keydown', handleUserActivity);
 
     //     // Set up the initial inactivity timeout
     //     resetInactivityTimeout();
 
-    //     // Clean up event listeners on component unmount
+    //     // Clean up event listeners
     //     return () => {
     //       window.removeEventListener('mousemove', handleUserActivity);
     //       window.removeEventListener('keydown', handleUserActivity);
