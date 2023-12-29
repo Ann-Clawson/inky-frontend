@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const jwt = localStorage.getItem("jwt");
 if (jwt) {
@@ -29,6 +29,49 @@ export function UserLogin() {
         console.log(error.response);
         setErrors(["Invalid email or password"]);
       });
+
+    //log out due to inactivity
+    // const LogoutDueToInactivity = () => {
+    //   const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+    //   useEffect(() => {
+    //     let inactivityTimeout;
+
+    //     const resetInactivityTimeout = () => {
+    //       if (inactivityTimeout) {
+    //         clearTimeout(inactivityTimeout);
+    //       }
+
+    //       inactivityTimeout = setTimeout(() => {
+    //         // Log out the user
+    //         handleLogout();
+    //       }, 300000); // 5 minutes in milliseconds (adjust as needed)
+    //     };
+
+    //     const handleUserActivity = () => {
+    //       resetInactivityTimeout();
+    //     };
+
+    //     const handleLogout = () => {
+    //       // Perform logout actions (e.g., clear user session)
+    //       setIsLoggedIn(false);
+    //       // You may also want to redirect the user to the login page
+    //     };
+
+    //     // Attach event listeners
+    //     window.addEventListener('mousemove', handleUserActivity);
+    //     window.addEventListener('keydown', handleUserActivity);
+
+    //     // Set up the initial inactivity timeout
+    //     resetInactivityTimeout();
+
+    //     // Clean up event listeners on component unmount
+    //     return () => {
+    //       window.removeEventListener('mousemove', handleUserActivity);
+    //       window.removeEventListener('keydown', handleUserActivity);
+    //       clearTimeout(inactivityTimeout);
+    //     };
+    //   }, []);
   };
 
   return (
