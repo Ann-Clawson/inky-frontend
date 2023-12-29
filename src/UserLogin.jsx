@@ -20,9 +20,10 @@ export function UserLogin() {
 
         axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
         localStorage.setItem("jwt", response.data.jwt);
+        //stores user_id in localStorage to be used for userdashboard
         localStorage.setItem("user", response.data.user_id);
         event.target.reset();
-        window.location.href = "/userdashboard"; // Change this to hide a modal, redirect to a specific page, etc.
+        window.location.href = "/userdashboard";
       })
       .catch((error) => {
         console.log(error.response);

@@ -16,7 +16,7 @@ export function Application(props) {
     function getRandomArbitrary(min, max) {
       return Math.floor(Math.random() * (max - min) + min);
     }
-    // const score = getRandomArbitrary(600, 850);
+    // const score = getRandomArbitrary(400, 850);
     const score = 600;
 
     const isApproved = score >= 600;

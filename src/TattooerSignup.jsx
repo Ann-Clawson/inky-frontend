@@ -7,7 +7,7 @@ export function TattooerSignup() {
     axios.post("http://localhost:3000/tattooers.json", params).then((response) => {
       console.log(response.data);
       event.target.reset();
-      window.location.href = "/tattooerlogin"; // Change this to hide a modal, redirect to a specific page, etc.
+      window.location.href = "/tattooerlogin";
     });
   };
 

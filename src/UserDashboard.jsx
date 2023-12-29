@@ -14,13 +14,13 @@ export function UserDashboard() {
     });
   };
 
-  console.log(currentUser, "name");
+  // console.log(currentUser, "name");
 
   useEffect(getUser, []);
 
   return (
     <div>
-      <h1>Howdy {currentUser.first_name}</h1>
+      <h1>Howdy {currentUser.first_name}!</h1>
       <h4>Here is a list of your applications:</h4>
     </div>
   );

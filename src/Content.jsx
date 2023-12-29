@@ -11,12 +11,9 @@ import { Routes, Route } from "react-router-dom";
 import { UserDashboard } from "./UserDashboard";
 
 export function Content() {
-  const [applications, setApplications] = useState([]);
-
   const handleCreateApplication = (params) => {
     axios.post("http://localhost:3000/applications.json", params).then((response) => {
-      console.log(response);
-      setApplications([response.data, ...applications]);
+      console.log(response.data);
     });
   };
 
