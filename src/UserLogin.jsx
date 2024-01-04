@@ -39,7 +39,7 @@ export function UserLogin() {
           localStorage.setItem("jwt", response.data.jwt);
           localStorage.setItem("tattooer_id", response.data.tattooer_id);
           event.target.reset();
-          window.location.href = "/";
+          window.location.href = "/tattooerdashboard";
         })
         .catch((error) => {
           console.log(error.response);

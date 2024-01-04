@@ -4,11 +4,11 @@ import { UserSignup } from "./UserSignup";
 import { UserLogin } from "./UserLogin";
 import { Logout } from "./Logout";
 import { TattooerSignup } from "./TattooerSignup";
-import { TattooerLogin } from "./TattooerLogin";
 import { Home } from "./Home";
 import { Application } from "./Application";
 import { Routes, Route } from "react-router-dom";
 import { UserDashboard } from "./UserDashboard";
+import { TattooerDashboard } from "./TattooerDashboard";
 
 export function Content() {
   const handleCreateApplication = (params) => {
@@ -21,7 +21,6 @@ export function Content() {
 
   const handleIndexTattooers = () => {
     axios.get("http://localhost:3000/tattooers.json").then((response) => {
-      // console.log(response.data);
       setTattooers(response.data);
     });
   };
@@ -35,13 +34,13 @@ export function Content() {
         <Route path="/userlogin" element={<UserLogin />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/usersignup" element={<UserSignup />} />
-        <Route path="/tattooerlogin" element={<TattooerLogin />} />
         <Route path="/tattooersignup" element={<TattooerSignup />} />
         <Route
           path="/apply"
           element={<Application onCreateApplication={handleCreateApplication} tattooers={tattooers} />}
         />
         <Route path="/userdashboard" element={<UserDashboard />} />
+        <Route path="/tattooerdashboard" element={<TattooerDashboard />} />
       </Routes>
     </div>
   );
