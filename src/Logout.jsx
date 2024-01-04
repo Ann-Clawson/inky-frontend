@@ -5,7 +5,8 @@ export function Logout() {
     event.preventDefault();
     delete axios.defaults.headers.common["Authorization"];
     localStorage.removeItem("jwt");
-    localStorage.removeItem("user");
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("tattooer_id");
     window.location.href = "/";
   };
 

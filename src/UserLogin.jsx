@@ -22,9 +22,9 @@ export function UserLogin() {
           axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
           //stores user_id in localStorage to be used for userdashboard
-          localStorage.setItem("user", response.data.user_id);
+          localStorage.setItem("user_id", response.data.user_id);
           event.target.reset();
-          // window.location.href = "/userdashboard";
+          window.location.href = "/userdashboard";
         })
         .catch((error) => {
           console.log(error.response);
@@ -37,8 +37,9 @@ export function UserLogin() {
           console.log(response.data);
           axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
+          localStorage.setItem("tattooer_id", response.data.tattooer_id);
           event.target.reset();
-          // window.location.href = "/";
+          window.location.href = "/";
         })
         .catch((error) => {
           console.log(error.response);
