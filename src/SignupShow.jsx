@@ -2,7 +2,6 @@
 import { Link } from "react-router-dom";
 
 export function SignupShow(props) {
-  // console.log("Howdy world!");
   return (
     <div>
       <h1>Who are you?</h1>

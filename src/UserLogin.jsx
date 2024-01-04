@@ -8,27 +8,43 @@ if (jwt) {
 
 export function UserLogin() {
   const [errors, setErrors] = useState([]);
+  const [isTattooer, setIsTattooer] = useState(false);
 
   const handleUserLogInSubmit = (event) => {
     event.preventDefault();
     setErrors([]);
     const params = new FormData(event.target);
-    axios
-      .post("http://localhost:3000/sessions.json", params)
-      .then((response) => {
-        console.log(response.data);
-        console.log(params.data);
-        axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
-        localStorage.setItem("jwt", response.data.jwt);
-        //stores user_id in localStorage to be used for userdashboard
-        localStorage.setItem("user", response.data.user_id);
-        event.target.reset();
-        // window.location.href = "/userdashboard";
-      })
-      .catch((error) => {
-        console.log(error.response);
-        setErrors(["Invalid email or password"]);
-      });
+    if (!isTattooer) {
+      axios
+        .post("http://localhost:3000/sessions.json", params)
+        .then((response) => {
+          console.log(response.data);
+          axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
+          localStorage.setItem("jwt", response.data.jwt);
+          //stores user_id in localStorage to be used for userdashboard
+          localStorage.setItem("user", response.data.user_id);
+          event.target.reset();
+          // window.location.href = "/userdashboard";
+        })
+        .catch((error) => {
+          console.log(error.response);
+          setErrors(["Invalid email or password"]);
+        });
+    } else {
+      axios
+        .post("http://localhost:3000/tattooer_sessions.json", params)
+        .then((response) => {
+          console.log(response.data);
+          axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
+          localStorage.setItem("jwt", response.data.jwt);
+          event.target.reset();
+          // window.location.href = "/";
+        })
+        .catch((error) => {
+          console.log(error.response);
+          setErrors(["Invalid email or password"]);
+        });
+    }
 
     //log out due to inactivity
     // const LogoutDueToInactivity = () => {
@@ -87,6 +103,9 @@ export function UserLogin() {
         </div>
         <div>
           Password: <input name="password" type="password" />
+        </div>
+        <div>
+          Are you a tattooer? <input type="checkbox" onClick={() => setIsTattooer(true)} />
         </div>
         <button type="submit">Login</button>
       </form>
