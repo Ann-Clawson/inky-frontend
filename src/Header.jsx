@@ -12,7 +12,7 @@ export function Header(props) {
         <Link onClick={() => props.onLoginShow()}>Log In</Link>
       </>
     );
-  } else {
+  } else if (localStorage.user_id) {
     authenticationLinks = (
       <>
         <Link
@@ -24,6 +24,12 @@ export function Header(props) {
           Apply
         </Link>{" "}
         |
+        <Logout />
+      </>
+    );
+  } else {
+    authenticationLinks = (
+      <>
         <Logout />
       </>
     );

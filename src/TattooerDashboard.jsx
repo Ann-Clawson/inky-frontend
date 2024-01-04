@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 export function TattooerDashboard() {
   const [currentTattooer, setCurrentTattooer] = useState({});
 
+  // eslint-disable-next-line no-unused-vars
   let tattooerID = localStorage.getItem("tattooer_id");
 
   const getUser = (tattooerID) => {
