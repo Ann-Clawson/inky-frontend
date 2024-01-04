@@ -18,10 +18,9 @@ export function UserLogin() {
       axios
         .post("http://localhost:3000/sessions.json", params)
         .then((response) => {
-          console.log(response.data);
+          // console.log(response.data);
           axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
-          //stores user_id in localStorage to be used for userdashboard
           localStorage.setItem("user_id", response.data.user_id);
           event.target.reset();
           window.location.href = "/userdashboard";
@@ -34,7 +33,7 @@ export function UserLogin() {
       axios
         .post("http://localhost:3000/tattooer_sessions.json", params)
         .then((response) => {
-          console.log(response.data);
+          // console.log(response.data);
           axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
           localStorage.setItem("tattooer_id", response.data.tattooer_id);

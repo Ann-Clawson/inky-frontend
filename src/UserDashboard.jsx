@@ -10,7 +10,7 @@ export function UserDashboard() {
 
   const getUser = (userID) => {
     axios.get(`http://localhost:3000/users/${userID}.json`).then((response) => {
-      console.log(response.data);
+      // console.log(response.data);
       setCurrentUser(response.data);
     });
   };

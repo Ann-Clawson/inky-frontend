@@ -8,7 +8,7 @@ export function TattooerDashboard() {
 
   const getUser = (tattooerID) => {
     axios.get(`http://localhost:3000/tattooers/${tattooerID}.json`).then((response) => {
-      console.log(response.data);
+      // console.log(response.data);
       setCurrentTattooer(response.data);
     });
   };
