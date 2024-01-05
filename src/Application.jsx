@@ -1,9 +1,19 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export function Application(props) {
   const [results, setResults] = useState("");
   const [approvedValue, setApprovedValue] = useState("");
+  const [tattooers, setTattooers] = useState([]);
+
+  const handleIndexTattooers = () => {
+    axios.get("http://localhost:3000/tattooers.json").then((response) => {
+      setTattooers(response.data);
+    });
+  };
+
+  useEffect(handleIndexTattooers, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -42,10 +52,6 @@ export function Application(props) {
     }
 
     const payment = Math.floor((amount * interestRate + amount) / numOfMonths);
-    // console.log(amount);
-    // console.log(numOfMonths);
-    // console.log(interestRate);
-    // console.log(payment);
 
     if (isApproved) {
       setResults(
@@ -73,7 +79,7 @@ export function Application(props) {
           Tattooer:{" "}
           <select id="tattooers-select" name="tattooer_id">
             <option value="">Select a tattooer</option>
-            {props.tattooers.map((tattooer) => (
+            {tattooers.map((tattooer) => (
               <option key={tattooer.id} value={tattooer.id}>
                 {tattooer.first_name} {tattooer.last_name}
               </option>

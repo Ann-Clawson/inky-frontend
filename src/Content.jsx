@@ -17,16 +17,6 @@ export function Content() {
     });
   };
 
-  const [tattooers, setTattooers] = useState([]);
-
-  const handleIndexTattooers = () => {
-    axios.get("http://localhost:3000/tattooers.json").then((response) => {
-      setTattooers(response.data);
-    });
-  };
-
-  useEffect(handleIndexTattooers, []);
-
   return (
     <div>
       <Routes>
@@ -35,10 +25,7 @@ export function Content() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/usersignup" element={<UserSignup />} />
         <Route path="/tattooersignup" element={<TattooerSignup />} />
-        <Route
-          path="/apply"
-          element={<Application onCreateApplication={handleCreateApplication} tattooers={tattooers} />}
-        />
+        <Route path="/apply" element={<Application onCreateApplication={handleCreateApplication} />} />
         <Route path="/userdashboard" element={<UserDashboard />} />
         <Route path="/tattooerdashboard" element={<TattooerDashboard />} />
       </Routes>
