@@ -81,7 +81,7 @@ export function Application(props) {
             <option value="">Select a tattooer</option>
             {tattooers.map((tattooer) => (
               <option key={tattooer.id} value={tattooer.id}>
-                {tattooer.first_name} {tattooer.last_name}
+                {tattooer.first_name} {tattooer.last_name}, {tattooer.tattoo_shop}
               </option>
             ))}
           </select>
