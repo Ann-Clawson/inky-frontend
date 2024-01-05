@@ -15,24 +15,27 @@ export function Application(props) {
 
   useEffect(handleIndexTattooers, []);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const params = new FormData(event.target);
-    // eslint-disable-next-line react/prop-types
-    props.onCreateApplication(params);
-    event.target.reset();
 
-    // math for loan terms
-    function getRandomArbitrary(min, max) {
-      return Math.floor(Math.random() * (max - min) + min);
-    }
+    // function getRandomArbitrary(min, max) {
+    //   return Math.floor(Math.random() * (max - min) + min);
+    // }
     // const score = getRandomArbitrary(400, 850);
-    const score = 600;
+
+    const score = 400;
 
     const isApproved = score >= 600;
     setApprovedValue(isApproved ? "true" : "false");
 
-    const amount = parseInt(params.get("amount"));
+    await new Promise((resolve) => setTimeout(resolve, 0));
+
+    const params = new FormData(event.target);
+    props.onCreateApplication(params);
+    event.target.reset();
+
+    const amountInput = params.get("amount");
+    const amount = parseInt(amountInput.replace(/[^\d]/g, ""), 10);
 
     const numOfMonths = parseInt(params.get("number_of_months"));
 
@@ -77,7 +80,7 @@ export function Application(props) {
       <form onSubmit={handleSubmit}>
         <div>
           Tattooer:{" "}
-          <select id="tattooers-select" name="tattooer_id">
+          <select id="tattooers-select" name="tattooer_id" required>
             <option value="">Select a tattooer</option>
             {tattooers.map((tattooer) => (
               <option key={tattooer.id} value={tattooer.id}>
@@ -91,7 +94,7 @@ export function Application(props) {
         </div>
         <div>
           Number of Months:
-          <select id="number-of-months-select" name="number_of_months">
+          <select id="number-of-months-select" name="number_of_months" required>
             <option value="">Select a term</option>
             <option value="6">6</option>
             <option value="12">12</option>
