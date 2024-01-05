@@ -6,6 +6,7 @@ export function Application(props) {
   const [results, setResults] = useState("");
   const [approvedValue, setApprovedValue] = useState("");
   const [tattooers, setTattooers] = useState([]);
+  const [interestRate, setInterestRate] = useState(0.0);
 
   const handleIndexTattooers = () => {
     axios.get("http://localhost:3000/tattooers.json").then((response) => {
@@ -17,52 +18,56 @@ export function Application(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     // function getRandomArbitrary(min, max) {
     //   return Math.floor(Math.random() * (max - min) + min);
     // }
     // const score = getRandomArbitrary(400, 850);
 
-    const score = 400;
+    const score = 600;
 
     const isApproved = score >= 600;
     setApprovedValue(isApproved ? "true" : "false");
-
     await new Promise((resolve) => setTimeout(resolve, 0));
 
     const params = new FormData(event.target);
-    props.onCreateApplication(params);
-    event.target.reset();
 
     const amountInput = params.get("amount");
     const amount = parseInt(amountInput.replace(/[^\d]/g, ""), 10);
 
     const numOfMonths = parseInt(params.get("number_of_months"));
-
-    let interestRate;
+    let interest;
     if (score < 700 && numOfMonths === 6) {
-      interestRate = 0.1;
+      interest = 0.1;
     } else if (score < 700 && numOfMonths === 12) {
-      interestRate = 0.12;
+      interest = 0.12;
     } else if (score > 700 && score < 800 && numOfMonths === 0.06) {
-      interestRate = 0.08;
+      interest = 0.08;
     } else if (score > 700 && score < 800 && numOfMonths === 12) {
-      interestRate = 0.1;
+      interest = 0.1;
     } else if (score > 800 && numOfMonths === 6) {
-      interestRate = 0.06;
+      interest = 0.06;
     } else {
-      interestRate = 0.08;
+      interest = 0.08;
     }
 
-    const payment = Math.floor((amount * interestRate + amount) / numOfMonths);
+    setInterestRate(interest);
+    console.log(interest);
+    console.log(interestRate);
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    params.set("interest_rate", interest);
+
+    const payment = Math.floor((amount * interest + amount) / numOfMonths);
+
+    props.onCreateApplication(params);
+    event.target.reset();
 
     if (isApproved) {
       setResults(
         <>
           <h2>Approved!</h2>
           <h3>
-            Your terms: ${amount}, {numOfMonths} months, {interestRate * 100}% interest rate, monthly payments of $
-            {payment}.
+            Your terms: ${amount}, {numOfMonths} months, {interest * 100}% interest rate, monthly payments of ${payment}
+            .
           </h3>
           <h4>
             Head on over to your <a href="/userdashboard/">DASHBOARD</a>
@@ -107,6 +112,7 @@ export function Application(props) {
           Date of Appointment: <input name="date_of_appt" type="text" required />
         </div>
         <input type="hidden" name="approved" value={approvedValue} />
+        <input type="hidden" name="interest_rate" value={interestRate} />
         <button type="submit">Submit</button>
       </form>
       {results}
