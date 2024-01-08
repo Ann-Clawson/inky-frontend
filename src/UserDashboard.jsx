@@ -4,18 +4,25 @@ import { useState, useEffect } from "react";
 
 export function UserDashboard() {
   const [currentUser, setCurrentUser] = useState({});
+  const [applications, setApplications] = useState([]);
 
   let userID = localStorage.getItem("user_id");
-  // console.log(userID);
 
   const getUser = (userID) => {
     axios.get(`http://localhost:3000/users/${userID}.json`).then((response) => {
-      // console.log(response.data);
       setCurrentUser(response.data);
     });
   };
 
+  const getApplications = () => {
+    axios.get("http://localhost:3000/applications.json").then((response) => {
+      let data = response.data;
+      setApplications(data.reverse());
+    });
+  };
+
   useEffect(getUser, []);
+  useEffect(getApplications, []);
 
   return (
     <div>
@@ -34,6 +41,19 @@ export function UserDashboard() {
             <th>Interest Rate</th>
             <th>Monthly Payment</th>
           </tr>
+          {applications.map((application) => (
+            <tr key={application.id}>
+              <td>{application.friendly_created_at}</td>
+              <td>{application.amount}</td>
+              <td>{application.tattooer_id}</td>
+              <td>{application.date_of_appt}</td>
+              <td>{application.description}</td>
+              <td>{application.approved ? "approved" : "pending"}</td>
+              <td>{application.number_of_months} months</td>
+              <td>{application.interest_rate * 100}%</td>
+              <td>${application.monthly_payment}</td>
+            </tr>
+          ))}
         </thead>
       </table>
     </div>

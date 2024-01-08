@@ -51,12 +51,13 @@ export function Application(props) {
     }
 
     setInterestRate(interest);
-    console.log(interest);
-    console.log(interestRate);
+    // console.log(interest);
+    // console.log(interestRate);
     await new Promise((resolve) => setTimeout(resolve, 0));
     params.set("interest_rate", interest);
 
-    const payment = Math.floor((amount * interest + amount) / numOfMonths);
+    const payment = (amount * interest + amount / numOfMonths).toFixed(2);
+    params.set("monthly_payment", payment);
 
     props.onCreateApplication(params);
     event.target.reset();
