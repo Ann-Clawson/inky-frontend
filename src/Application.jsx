@@ -53,7 +53,7 @@ export function Application(props) {
     setInterestRate(interest);
     // console.log(interest);
     // console.log(interestRate);
-    await new Promise((resolve) => setTimeout(resolve, 0));
+    // await new Promise((resolve) => setTimeout(resolve, 0));
     params.set("interest_rate", interest);
 
     const payment = (amount * interest + amount / numOfMonths).toFixed(2);
