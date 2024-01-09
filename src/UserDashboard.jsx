@@ -20,6 +20,27 @@ export function UserDashboard() {
     });
   };
 
+  // const getApplications = () => {
+  //   axios.get("http://localhost:3000/applications.json").then(async (response) => {
+  //     const updatedApplications = [];
+
+  //     for (const application of response.data) {
+  //       // Fetch tattooer information for each application
+  //       const tattooerResponse = await axios.get(`http://localhost:3000/tattooers/${application.tattooer_id}.json`);
+
+  //       // Create an updated application object with the tattooer's name
+  //       const updatedApplication = {
+  //         ...application,
+  //         tattooer_name: `${tattooerResponse.data.first_name} ${tattooerResponse.data.last_name}`,
+  //       };
+
+  //       updatedApplications.push(updatedApplication);
+  //     }
+
+  //     setApplications(updatedApplications);
+  //   });
+  // };
+
   useEffect(getUser, []);
   useEffect(getApplications, []);
 
