@@ -16,8 +16,7 @@ export function UserDashboard() {
 
   const getApplications = () => {
     axios.get("http://localhost:3000/applications.json").then((response) => {
-      let data = response.data;
-      setApplications(data.reverse());
+      setApplications(response.data);
     });
   };
 
