@@ -93,7 +93,7 @@ export function Application(props) {
           </select>
         </div>
         <div>
-          Amount: <input name="amount" type="text" required />
+          Amount: <input name="amount" type="number" min="100" max="2500" required />
         </div>
         <div>
           Number of Months:
