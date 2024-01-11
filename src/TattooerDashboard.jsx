@@ -3,18 +3,33 @@ import { useState, useEffect } from "react";
 
 export function TattooerDashboard() {
   const [currentTattooer, setCurrentTattooer] = useState({});
+  const [applications, setApplications] = useState([]);
+  const [users, setUsers] = useState([]);
 
   // eslint-disable-next-line no-unused-vars
   let tattooerID = localStorage.getItem("tattooer_id");
 
   const getUser = (tattooerID) => {
     axios.get(`http://localhost:3000/tattooers/${tattooerID}.json`).then((response) => {
-      // console.log(response.data);
       setCurrentTattooer(response.data);
     });
   };
 
+  const getApplications = () => {
+    axios.get("http://localhost:3000/applications.json").then((response) => {
+      setApplications(response.data);
+    });
+  };
+
+  const handleIndexUsers = () => {
+    axios.get("http://localhost:3000/users.json").then((response) => {
+      setUsers(response.data);
+    });
+  };
+
   useEffect(getUser, []);
+  useEffect(getApplications, []);
+  useEffect(handleIndexUsers, []);
 
   return (
     <div>
