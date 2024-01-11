@@ -31,14 +31,9 @@ export function UserDashboard() {
   useEffect(getApplications, []);
   useEffect(handleIndexTattooers, []);
 
-  const getTattooerFirstName = (tattooerId) => {
+  const getTattooerName = (tattooerId, nameType) => {
     const tattooer = tattooers.find((t) => t.id === tattooerId);
-    return tattooer ? tattooer.first_name : "Unknown Tattooer";
-  };
-
-  const getTattooerLastName = (tattooerId) => {
-    const tattooer = tattooers.find((t) => t.id === tattooerId);
-    return tattooer ? tattooer.last_name : "Unknown Tattooer";
+    return tattooer ? tattooer[nameType] : "Unknown Tattooer";
   };
 
   return (
@@ -63,7 +58,8 @@ export function UserDashboard() {
               <td>{application.friendly_created_at}</td>
               <td>{application.amount}</td>
               <td>
-                {getTattooerFirstName(application.tattooer_id)} {getTattooerLastName(application.tattooer_id)}
+                {getTattooerName(application.tattooer_id, "first_name")}{" "}
+                {getTattooerName(application.tattooer_id, "last_name")}
               </td>
               <td>{application.date_of_appt}</td>
               <td>{application.description}</td>
