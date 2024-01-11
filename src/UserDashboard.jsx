@@ -46,7 +46,7 @@ export function UserDashboard() {
             <th>Application Date</th>
             <th>Amount</th>
             <th>Tattooer</th>
-            <th>Date of Apppointment</th>
+            <th>Date of Appointment</th>
             <th>Tattoo Description</th>
             <th>App Status</th>
             <th>Loan Term</th>
