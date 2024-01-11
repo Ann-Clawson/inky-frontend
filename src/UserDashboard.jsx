@@ -36,6 +36,11 @@ export function UserDashboard() {
     return tattooer ? tattooer.first_name : "Unknown Tattooer";
   };
 
+  const getTattooerLastName = (tattooerId) => {
+    const tattooer = tattooers.find((t) => t.id === tattooerId);
+    return tattooer ? tattooer.last_name : "Unknown Tattooer";
+  };
+
   return (
     <div>
       <h1>Howdy {currentUser.first_name}!</h1>
@@ -57,7 +62,9 @@ export function UserDashboard() {
             <tr key={application.id}>
               <td>{application.friendly_created_at}</td>
               <td>{application.amount}</td>
-              <td>{getTattooerFirstName(application.tattooer_id)}</td>
+              <td>
+                {getTattooerFirstName(application.tattooer_id)} {getTattooerLastName(application.tattooer_id)}
+              </td>
               <td>{application.date_of_appt}</td>
               <td>{application.description}</td>
               <td>{application.approved ? "approved" : "pending"}</td>
