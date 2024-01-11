@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 export function UserDashboard() {
   const [currentUser, setCurrentUser] = useState({});
   const [applications, setApplications] = useState([]);
+  const [tattooers, setTattooers] = useState([]);
 
   let userID = localStorage.getItem("user_id");
 
@@ -20,29 +21,20 @@ export function UserDashboard() {
     });
   };
 
-  // const getApplications = () => {
-  //   axios.get("http://localhost:3000/applications.json").then(async (response) => {
-  //     const updatedApplications = [];
-
-  //     for (const application of response.data) {
-  //       // Fetch tattooer information for each application
-  //       const tattooerResponse = await axios.get(`http://localhost:3000/tattooers/${application.tattooer_id}.json`);
-
-  //       // Create an updated application object with the tattooer's name
-  //       const updatedApplication = {
-  //         ...application,
-  //         tattooer_name: `${tattooerResponse.data.first_name} ${tattooerResponse.data.last_name}`,
-  //       };
-
-  //       updatedApplications.push(updatedApplication);
-  //     }
-
-  //     setApplications(updatedApplications);
-  //   });
-  // };
+  const handleIndexTattooers = () => {
+    axios.get("http://localhost:3000/tattooers.json").then((response) => {
+      setTattooers(response.data);
+    });
+  };
 
   useEffect(getUser, []);
   useEffect(getApplications, []);
+  useEffect(handleIndexTattooers, []);
+
+  const getTattooerFirstName = (tattooerId) => {
+    const tattooer = tattooers.find((t) => t.id === tattooerId);
+    return tattooer ? tattooer.first_name : "Unknown Tattooer";
+  };
 
   return (
     <div>
@@ -65,7 +57,7 @@ export function UserDashboard() {
             <tr key={application.id}>
               <td>{application.friendly_created_at}</td>
               <td>{application.amount}</td>
-              <td>{application.tattooer_id}</td>
+              <td>{getTattooerFirstName(application.tattooer_id)}</td>
               <td>{application.date_of_appt}</td>
               <td>{application.description}</td>
               <td>{application.approved ? "approved" : "pending"}</td>
