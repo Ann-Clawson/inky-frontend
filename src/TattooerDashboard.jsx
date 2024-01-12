@@ -45,13 +45,10 @@ export function TattooerDashboard() {
           <tr>
             <th>Application Date</th>
             <th>Amount</th>
-            <th>Tattooer</th>
+            <th>Client</th>
             <th>Date of Appointment</th>
             <th>Tattoo Description</th>
-            <th>App Status</th>
-            <th>Loan Term</th>
-            <th>Interest Rate</th>
-            <th>Monthly Payment</th>
+            <th>Payment Status</th>
           </tr>
           {applications.map((application) => (
             <tr key={application.id}>
@@ -62,10 +59,6 @@ export function TattooerDashboard() {
               </td>
               <td>{application.date_of_appt}</td>
               <td>{application.description}</td>
-              <td>{application.approved ? "approved" : "pending"}</td>
-              <td>{application.number_of_months} months</td>
-              <td>{application.interest_rate * 100}%</td>
-              <td>${application.monthly_payment}</td>
             </tr>
           ))}
         </thead>

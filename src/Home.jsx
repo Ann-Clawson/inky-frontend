@@ -10,10 +10,6 @@ export function Home() {
           And, with fair and equitable lending practices and fast and secure payments, <br />
           <strong>ink(y)</strong> is for everyone, too.
         </p>
-
-        <p>
-          <em>Apply for tattoo financing today, and receive a response today!</em>
-        </p>
       </div>
     </>
   );
