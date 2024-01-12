@@ -49,6 +49,8 @@ export function TattooerDashboard() {
             <th>Date of Appointment</th>
             <th>Tattoo Description</th>
             <th>Payment Status</th>
+            <th>Upload Artwork</th>
+            <th>Artwork Status</th>
           </tr>
           {applications.map((application) => (
             <tr key={application.id}>
