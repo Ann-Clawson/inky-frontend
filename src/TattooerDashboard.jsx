@@ -43,10 +43,12 @@ export function TattooerDashboard() {
       <table>
         <thead>
           <tr>
+            <th>Date of Appointment</th>
             <th>Application Date</th>
             <th>Amount</th>
             <th>Client</th>
-            <th>Date of Appointment</th>
+            <th>Client Phone</th>
+            <th>Client Email</th>
             <th>Tattoo Description</th>
             <th>Payment Status</th>
             <th>Upload Artwork</th>
@@ -54,12 +56,15 @@ export function TattooerDashboard() {
           </tr>
           {applications.map((application) => (
             <tr key={application.id}>
+              <td>{application.date_of_appt}</td>
               <td>{application.friendly_created_at}</td>
               <td>{application.amount}</td>
               <td>
                 {getUserName(application.tattooer_id, "first_name")} {getUserName(application.tattooer_id, "last_name")}
               </td>
-              <td>{application.date_of_appt}</td>
+              <td>{}</td>
+              <td>{}</td>
+              <td>{}</td>
               <td>{application.description}</td>
             </tr>
           ))}
