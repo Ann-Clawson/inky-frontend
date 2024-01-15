@@ -1,6 +1,6 @@
 export function Home() {
   return (
-    <>
+    <div>
       <div className="container" id="home">
         <h1>
           ink(y) is for everyone<span> &copy;</span>
@@ -11,6 +11,6 @@ export function Home() {
           <strong>ink(y)</strong> is for everyone, too.
         </p>
       </div>
-    </>
+    </div>
   );
 }

@@ -3,7 +3,9 @@ span {
 }
 
 body {
-  background-image: url("inkybackground.jpg");
+  background-image: url("./assets/transparentbackground.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
+  background-position: bottom;
 }
