@@ -1,8 +1,13 @@
 span {
   font-size: 12px;
 }
+html, body {
+  margin: 0px;
+  height: 100%;
+}
 
-body {
+#home {
+  height: 100vh;
   background-image: url("./assets/transparentbackground.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
