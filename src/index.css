@@ -3,5 +3,7 @@ span {
 }
 
 body {
-  background-image: ;
+  background-image: url("inkybackground.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
