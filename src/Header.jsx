@@ -7,8 +7,7 @@ export function Header(props) {
   if (localStorage.jwt === undefined) {
     authenticationLinks = (
       <>
-        <Link onClick={() => props.onApplyShow()}>Apply</Link> |{" "}
-        <Link onClick={() => props.onSignupShow()}>Sign Up</Link> |{" "}
+        <Link onClick={() => props.onApplyShow()}>Apply</Link> <Link onClick={() => props.onSignupShow()}>Sign Up</Link>{" "}
         <Link onClick={() => props.onLoginShow()}>Log In</Link>
       </>
     );
@@ -23,7 +22,6 @@ export function Header(props) {
         >
           Apply
         </Link>{" "}
-        |
         <Logout />
       </>
     );
@@ -38,7 +36,7 @@ export function Header(props) {
   return (
     <header>
       <nav className="navbar fixed-top bg-body-tertiary">
-        <Link to="/">Home</Link> | {authenticationLinks}
+        <Link to="/">Home</Link> {authenticationLinks}
       </nav>
     </header>
   );
