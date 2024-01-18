@@ -16,5 +16,9 @@ html, body {
 }
 
 .home {
-  
+  text-align: center;
+}
+
+.banner {
+  padding-top: 200px;
 }

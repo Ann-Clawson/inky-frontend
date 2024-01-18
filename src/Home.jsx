@@ -1,7 +1,7 @@
 export function Home() {
   return (
     <div className="home" id="home">
-      <div className="">
+      <div className="banner">
         <h1>
           ink(y) is for everyone<span> &copy;</span>
         </h1>
