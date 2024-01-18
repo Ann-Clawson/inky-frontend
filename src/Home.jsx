@@ -1,7 +1,7 @@
 export function Home() {
   return (
-    <div>
-      <div className="container" id="home">
+    <div className="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+      <div className="containercol-lg-8 align-self-end" id="home">
         <h1>
           ink(y) is for everyone<span> &copy;</span>
         </h1>
