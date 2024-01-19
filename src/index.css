@@ -8,6 +8,7 @@ html, body {
 
 #home {
   height: 100vh;
+  width: 100vw;
   background-image: url("./assets/transparentbackground.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -17,8 +18,11 @@ html, body {
 
 .home {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
 
-.banner {
-  padding-top: 200px;
+.banner-container {
+  width: 100%;
 }
