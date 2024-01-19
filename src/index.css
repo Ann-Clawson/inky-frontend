@@ -16,6 +16,11 @@ html, body {
   background-position: bottom;
 }
 
+#home h1 {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
 .home {
   text-align: center;
   display: flex;
