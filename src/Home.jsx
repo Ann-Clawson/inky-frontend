@@ -4,7 +4,7 @@ export function Home() {
       <div className="banner-container">
         <div className="banner">
           <h1>
-            ink(y) is for everyone<span> &copy;</span>
+            <span className="inky">ink(y)</span> is for everyone<span> &copy;</span>
           </h1>
         </div>
         <div className="">
