@@ -8,7 +8,7 @@ export function Home() {
           </h1>
         </div>
         <div className="">
-          <p>
+          <p className="for-everyone">
             Ink should be for everyone. <br />
             And, with fair and equitable lending practices and fast and secure payments, <br />
             <strong>ink(y)</strong> is for everyone, too.
