@@ -37,7 +37,7 @@ html, body {
 
 .banner-container {
   /* width: 100%; */
-  background-color: rgba(128, 128, 128, 0.5);
+  background-color: rgba(52, 51, 51, 0.5);
   padding: 20px;
   border-radius: 10px; 
 }
@@ -45,5 +45,5 @@ html, body {
 .for-everyone {
   color: azure;
   font-size: 30px;
-  text-shadow: -5px -2px 7px black;
+  text-shadow: 5px 2px 5px black;
 }
