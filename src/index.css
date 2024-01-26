@@ -14,10 +14,22 @@ html, body {
   background-attachment: fixed;
   background-size: cover;
   background-position: bottom;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
 
+/* .home {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+} */
+
 #home h1 {
-  color: azure;
+  color: rgb(252, 252, 251);
   text-shadow: 8px 2px 5px black;
   font-size: 100px;
 }
@@ -28,14 +40,6 @@ html, body {
   font-size: 100px;
 }
 
-.home {
-  width: 100%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-items: center;
-}
-
 .banner-container {
   /* width: 100%; */
   background-color: rgba(52, 51, 51, 0.5);
@@ -44,7 +48,7 @@ html, body {
 }
 
 .for-everyone {
-  color: azure;
+  color: rgb(252, 252, 251);
   font-size: 30px;
   text-shadow: 5px 2px 5px black;
 }
