@@ -20,13 +20,11 @@ html, body {
   justify-items: center;
 }
 
-/* .home {
-  width: 100%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-items: center;
-} */
+.logo {
+  color: rgb(138, 223, 244);
+  text-shadow: 2px 2px 3px black;
+  font-size: 35px;
+}
 
 #home h1 {
   color:white;
@@ -34,7 +32,7 @@ html, body {
   font-size: 100px;
 }
 
-#home .inky {
+.inky {
   color: rgb(138, 223, 244);
   text-shadow: 8px 2px 5px black;
   font-size: 100px;

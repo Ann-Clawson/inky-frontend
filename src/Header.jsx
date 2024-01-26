@@ -36,6 +36,7 @@ export function Header(props) {
   return (
     <header>
       <nav className="navbar fixed-top bg-body-tertiary">
+        <div className="logo">ink(y)</div>
         <Link to="/">Home</Link> {authenticationLinks}
       </nav>
     </header>
