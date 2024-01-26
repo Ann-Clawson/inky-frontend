@@ -41,7 +41,7 @@ html, body {
 }
 
 .banner-container {
-  /* width: 100%; */
+  width: 100%;
   background-color: rgba(52, 51, 51, 0.5);
   padding: 20px;
   border-radius: 1px; 
