@@ -29,7 +29,7 @@ html, body {
 } */
 
 #home h1 {
-  color: rgb(252, 252, 251);
+  color:white;
   text-shadow: 8px 2px 5px black;
   font-size: 100px;
 }
@@ -48,7 +48,7 @@ html, body {
 }
 
 .for-everyone {
-  color: rgb(252, 252, 251);
+  color:white;
   font-size: 30px;
   text-shadow: 5px 2px 5px black;
 }
