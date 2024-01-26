@@ -36,7 +36,10 @@ html, body {
 }
 
 .banner-container {
-  width: 100%;
+  /* width: 100%; */
+  background-color: rgba(128, 128, 128, 0.5);
+  padding: 20px;
+  border-radius: 10px; 
 }
 
 .for-everyone {
