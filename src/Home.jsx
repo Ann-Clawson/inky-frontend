@@ -14,7 +14,7 @@ export function Home() {
             <strong>ink(y)</strong> is for everyone, too.
           </p>
         </div>
-        <button type="button" className="btn btn-outline-info">
+        <button type="button" className="btn btn-outline-info btn-bnr">
           Apply for Tattoo Financing
         </button>
       </div>

@@ -50,3 +50,8 @@ html, body {
   font-size: 30px;
   text-shadow: 5px 2px 5px black;
 }
+
+.btn-bnr {
+  color: rgb(138, 223, 244);
+  border-color:rgb(138, 223, 244);
+}
