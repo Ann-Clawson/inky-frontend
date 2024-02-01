@@ -54,73 +54,24 @@ html, body {
 .btn-bnr {
   color: black;
   background: rgb(138, 223, 244);
-background: linear-gradient(0deg, rgb(138, 223, 244, 1) 15%, rgb(138, 209, 251)100%);
+background: linear-gradient(0deg, rgb(138, 223, 244, 1) 15%, rgb(96, 185, 237)100%);
   width: 230px;
   height: 40px;
   line-height: 42px;
   padding: 0;
-  border:1px solid black;
+  /* border:1px solid black; */
   
 }
-/* .btn-bnr span {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-} */
-/* .btn-bnr:before,
-.btn-bnr:after {
-  position: absolute;
-  content: "";
-  right: 0;
-  top: 0;
-  background: rgba(2,126,251,1);
-  transition: all 0.3s ease;
-} */
-/* .btn-bnr:before {
-  height: 0%;
-  width: 2px;
-}
-.btn-bnr:after {
-  width: 0%;
-  height: 2px;
-} */
-.btn-bnr:hover{
+
+.btn-bnr:hover {
   background: transparent;
   box-shadow: none;
   color: white;
   text-shadow: 5px 2px 5px black;
   border:1px solid rgb(138, 223, 244);
 }
-/* .btn-bnr:hover:before {
-  height: 100%;
+
+.btn-bnr:active {
+  color: purple !important;
+  text-shadow: none !important;
 }
-.btn-bnr:hover:after {
-  width: 100%;
-} */
-/* .btn-bnr span:hover{
-  color:rgb(138, 223, 244);
-} */
-/* .btn-bnr span:before,
-.btn-bnr span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: 0;
-  background: rgb(138, 223, 244);
-  transition: all 0.3s ease;
-} */
-/* .btn-bnr span:before {
-  width: 2px;
-  height: 0%;
-}
-.btn-bnr span:after {
-  width: 0%;
-  height: 2px;
-}
-.btn-bnr span:hover:before {
-  height: 100%;
-}
-.btn-bnr span:hover:after {
-  width: 100%;
-} */
