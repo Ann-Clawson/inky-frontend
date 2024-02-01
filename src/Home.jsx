@@ -15,7 +15,7 @@ export function Home() {
           </p>
         </div>
         <button type="button" className="btn btn-outline-info btn-bnr">
-          Apply for Tattoo Financing
+          <i>Apply for Tattoo Financing</i>
         </button>
       </div>
     </div>
