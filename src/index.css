@@ -52,7 +52,7 @@ html, body {
 }
 
 .btn-bnr {
-  color: black;
+  color:rgb(39, 38, 39);
   background: rgb(138, 223, 244);
 background: linear-gradient(0deg, rgb(138, 223, 244, 1) 15%, rgb(96, 185, 237)100%);
   width: 230px;
@@ -72,6 +72,6 @@ background: linear-gradient(0deg, rgb(138, 223, 244, 1) 15%, rgb(96, 185, 237)10
 }
 
 .btn-bnr:active {
-  color: purple !important;
+  color: rgb(39, 38, 39) !important;
   text-shadow: none !important;
 }
