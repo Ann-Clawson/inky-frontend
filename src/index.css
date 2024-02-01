@@ -51,19 +51,15 @@ html, body {
   text-shadow: 5px 2px 5px black;
 }
 
-/* .btn-bnr {
-  color: rgb(138, 223, 244);
-  border-color:rgb(138, 223, 244);
-} */
-
 .btn-bnr {
+  color: black;
   background: rgb(138, 223, 244);
-background: linear-gradient(0deg, rgb(138, 223, 244, 1) 0%, rgba(2,126,251,1) 100%);
+background: linear-gradient(0deg, rgb(138, 223, 244, 1) 15%, rgb(138, 209, 251)100%);
   width: 230px;
   height: 40px;
   line-height: 42px;
   padding: 0;
-  border: none;
+  border:1px solid black;
   
 }
 /* .btn-bnr span {
@@ -94,6 +90,7 @@ background: linear-gradient(0deg, rgb(138, 223, 244, 1) 0%, rgba(2,126,251,1) 10
   box-shadow: none;
   color: white;
   text-shadow: 5px 2px 5px black;
+  border:1px solid rgb(138, 223, 244);
 }
 /* .btn-bnr:hover:before {
   height: 100%;
