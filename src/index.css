@@ -57,6 +57,7 @@ html, body {
   color: white;
   text-shadow: 5px 2px 5px black;
   border:1px solid rgb(138, 223, 244);
+  border-radius: 2px !important;
 }
 
 .btn-bnr:hover  {
