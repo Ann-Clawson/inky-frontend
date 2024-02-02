@@ -24,7 +24,7 @@ html, body {
   margin-left: 1rem; /* Add space between links, adjust as needed */
   color: rgba(52, 51, 51); /* Change link text color as needed */
   text-decoration: none; /* Remove underlines */
-  font-weight: bold; /* Adjust as needed */
+  /* font-weight: bold; Adjust as needed */
 }
 
 .logo {
