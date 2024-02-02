@@ -34,6 +34,10 @@ html, body {
   font-size: 35px;
   margin-left: 20px;
 }
+
+.logo-anchor {
+  margin-left: 0px !important;
+}
 /* END NAV BAR */
 
 /* BEGIN HOME */
