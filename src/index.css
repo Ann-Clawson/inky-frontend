@@ -48,22 +48,10 @@ html, body {
 .for-everyone {
   color:white;
   font-size: 30px;
-  text-shadow: 5px 2px 5px black;
+  text-shadow: 1px 1px 1px black;
 }
 
 .btn-bnr {
-  color:rgb(39, 38, 39);
-  background: rgb(138, 223, 244);
-background: linear-gradient(0deg, rgb(138, 223, 244, 1) 15%, rgb(96, 185, 237)100%);
-  width: 230px;
-  height: 40px;
-  line-height: 42px;
-  padding: 0;
-  /* border:1px solid black; */
-  
-}
-
-.btn-bnr:hover {
   background: transparent;
   box-shadow: none;
   color: white;
@@ -71,7 +59,20 @@ background: linear-gradient(0deg, rgb(138, 223, 244, 1) 15%, rgb(96, 185, 237)10
   border:1px solid rgb(138, 223, 244);
 }
 
+.btn-bnr:hover  {
+  color:rgb(39, 38, 39);
+  background: rgb(138, 223, 244, 0.9) !important;
+background: linear-gradient(0deg, rgb(138, 223, 244, 1) 75%, rgb(120, 215, 255)100%);
+text-shadow: none;
+border:1px solid rgba(52, 51, 51, 0.5) !important;
+}
+
 .btn-bnr:active {
-  color: rgb(39, 38, 39) !important;
-  text-shadow: none !important;
+  /* color: rgb(39, 38, 39) !important;
+  text-shadow: none !important; */
+  background: transparent !important;
+  box-shadow: none !important;
+  color: white !important;
+  text-shadow: 5px 2px 5px black !important;
+  border:1px solid rgb(138, 223, 244) !important;
 }
