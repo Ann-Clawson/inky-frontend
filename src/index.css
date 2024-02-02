@@ -6,6 +6,7 @@ html, body {
   height: 100%;
 }
 
+/* BEGIN NAV BAR */
 .nav-bar{
   position: fixed;
   width: 100vw;
@@ -21,18 +22,21 @@ html, body {
 }
 
 .nav-bar a {
-  margin-left: 1rem; /* Add space between links, adjust as needed */
-  color: rgba(52, 51, 51); /* Change link text color as needed */
-  text-decoration: none; /* Remove underlines */
-  /* font-weight: bold; Adjust as needed */
+  margin-left: 1rem;
+  color: rgba(52, 51, 51);
+  text-decoration: none;
+  margin-right: 20px;
 }
 
 .logo {
   color: rgb(138, 223, 244);
   text-shadow: 2px 2px 3px black;
   font-size: 35px;
+  margin-left: 20px;
 }
+/* END NAV BAR */
 
+/* BEGIN HOME */
 #home {
   height: 100vh;
   width: 100vw;
@@ -97,3 +101,4 @@ html, body {
   text-shadow: 5px 2px 5px black !important;
   border:1px solid rgb(138, 223, 244) !important;
 }
+/* END HOME */
