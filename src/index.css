@@ -51,7 +51,7 @@ html, body {
   text-shadow: 1px 1px 1px black;
 }
 
-.btn-bnr, .btn-bnr:active {
+.btn-bnr {
   margin-top: 20px;
   background: transparent;
   box-shadow: none;
