@@ -6,6 +6,20 @@ html, body {
   height: 100%;
 }
 
+.nav-bar{
+  position: fixed;
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  color: rgb(138, 223, 244);
+  text-shadow: 2px 2px 3px black;
+  font-size: 35px;
+}
+
 #home {
   height: 100vh;
   width: 100vw;
@@ -18,12 +32,6 @@ html, body {
   display: flex;
   align-items: center;
   justify-items: center;
-}
-
-.logo {
-  color: rgb(138, 223, 244);
-  text-shadow: 2px 2px 3px black;
-  font-size: 35px;
 }
 
 #home h1 {
