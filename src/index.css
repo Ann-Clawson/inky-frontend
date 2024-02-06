@@ -105,6 +105,18 @@ html, body {
 }
 /* END HOME */
 
+/* BEGIN DASHBOARD */
+.dashboard {
+  /* height: 100vh;
+  width: 100vw; */
+  padding-top: 75px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+/* END DASHBOARD */
+
 /* FOOTER BEGIN */
 
 footer {
