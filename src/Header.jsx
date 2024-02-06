@@ -22,6 +22,7 @@ export function Header(props) {
         >
           Apply
         </Link>{" "}
+        <Link to="/userdashboard">Dashboard</Link>
         <Logout />
       </>
     );
