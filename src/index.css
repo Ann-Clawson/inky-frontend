@@ -22,10 +22,9 @@ html, body {
 }
 
 .nav-bar a {
-  margin-left: 1rem;
+  margin: 0px 20px;
   color: rgba(52, 51, 51);
   text-decoration: none;
-  margin-right: 20px;
 }
 
 .logo {
