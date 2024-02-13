@@ -78,6 +78,10 @@ html, body {
   text-shadow: 1px 1px 1px black;
 }
 
+.for-everyone strong {
+  color: rgb(138, 223, 244);
+}
+
 .btn-bnr {
   margin-top: 20px;
   background: transparent;
@@ -118,10 +122,8 @@ html, body {
 /* END DASHBOARD */
 
 /* FOOTER BEGIN */
-
 footer {
   text-align: center;
   padding: 13px 0px 1px;
 }
-
 /* FOOTER END */
