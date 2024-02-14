@@ -80,6 +80,7 @@ html, body {
 
 .for-everyone strong {
   color: rgb(138, 223, 244);
+  text-shadow: 2px 2px 3px black;
 }
 
 .btn-bnr {
