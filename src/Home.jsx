@@ -10,7 +10,7 @@ export function Home() {
         <div className="">
           <p className="for-everyone">
             Ink should be for everyone. <br />
-            And, with fair and equitable lending practices and fast and secure payments, <br />
+            With fair and equitable lending practices and fast and secure artist payments, <br />
             <strong>inky</strong> is for everyone, too.
           </p>
         </div>
