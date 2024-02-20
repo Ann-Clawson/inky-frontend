@@ -14,9 +14,11 @@ export function Home() {
             <strong>inky</strong> should be for everyone, too.
           </p>
         </div>
-        <button type="button" className="btn btn-outline-info btn-bnr">
-          <i>Apply for Tattoo Financing</i>
-        </button>
+        <a href="/about">
+          <button type="button" className="btn btn-outline-info btn-bnr">
+            <i>Apply for Tattoo Financing</i>
+          </button>
+        </a>
       </div>
     </div>
   );
