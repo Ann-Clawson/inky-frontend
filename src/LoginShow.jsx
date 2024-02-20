@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -45,29 +44,29 @@ export function LoginShow() {
           setErrors(["Invalid email or password"]);
         });
     }
-
-    return (
-      <div>
-        <h1>User Log In</h1>
-        <ul>
-          {errors.map((error) => (
-            <li key={error}>{error}</li>
-          ))}
-        </ul>
-        <form onSubmit={handleUserLogInSubmit}>
-          <div>
-            Email: <input name="email" type="email" />
-          </div>
-          <div>
-            Password: <input name="password" type="password" />
-          </div>
-          <div>
-            Are you a tattooer?{" "}
-            <input type="checkbox" onClick={() => (isTattooer ? setIsTattooer(false) : setIsTattooer(true))} />
-          </div>
-          <button type="submit">Login</button>
-        </form>
-      </div>
-    );
   };
+
+  return (
+    <div>
+      <h1>User Log In</h1>
+      <ul>
+        {errors.map((error) => (
+          <li key={error}>{error}</li>
+        ))}
+      </ul>
+      <form onSubmit={handleUserLogInSubmit}>
+        <div>
+          Email: <input name="email" type="email" />
+        </div>
+        <div>
+          Password: <input name="password" type="password" />
+        </div>
+        <div>
+          Are you a tattooer?{" "}
+          <input type="checkbox" onClick={() => (isTattooer ? setIsTattooer(false) : setIsTattooer(true))} />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  );
 }
