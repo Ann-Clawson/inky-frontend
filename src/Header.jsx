@@ -41,7 +41,9 @@ export function Header(props) {
           <div className="logo">inky</div>
         </a>
         <div>
-          <Link to="/">Home</Link> {authenticationLinks}
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          {authenticationLinks}
         </div>
       </nav>
     </header>

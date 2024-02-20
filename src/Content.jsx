@@ -1,10 +1,10 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
 import { UserSignup } from "./UserSignup";
 import { UserLogin } from "./Login";
 import { Logout } from "./Logout";
 import { TattooerSignup } from "./TattooerSignup";
 import { Home } from "./Home";
+import { About } from "./About";
 import { Application } from "./Application";
 import { Routes, Route } from "react-router-dom";
 import { UserDashboard } from "./UserDashboard";
@@ -21,6 +21,7 @@ export function Content() {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />}></Route>
         <Route path="/userlogin" element={<UserLogin />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/usersignup" element={<UserSignup />} />
