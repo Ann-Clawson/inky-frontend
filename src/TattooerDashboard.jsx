@@ -40,20 +40,19 @@ export function TattooerDashboard() {
     <div className="dashboard">
       <div>
         <h1>Howdy {currentTattooer.first_name}!</h1>
-        <h4>Here is a list of your applications:</h4>
+        <h4>Here is a list of your clients:</h4>
         <table>
           <thead>
             <tr>
               <th>Date of Appointment</th>
               <th>Application Date</th>
               <th>Amount</th>
-              <th>Client</th>
+              <th>Client Name</th>
               <th>Client Phone</th>
               <th>Client Email</th>
               <th>Tattoo Description</th>
               <th>Payment Status</th>
               <th>Upload Artwork</th>
-              <th>Artwork Status</th>
             </tr>
             {applications.map((application) => (
               <tr key={application.id}>
@@ -64,7 +63,6 @@ export function TattooerDashboard() {
                   {getUserName(application.tattooer_id, "first_name")}{" "}
                   {getUserName(application.tattooer_id, "last_name")}
                 </td>
-                <td>{}</td>
                 <td>{}</td>
                 <td>{}</td>
                 <td>{application.description}</td>
