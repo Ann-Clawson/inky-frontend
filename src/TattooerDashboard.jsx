@@ -37,39 +37,42 @@ export function TattooerDashboard() {
   };
 
   return (
-    <div>
-      <h1>Howdy {currentTattooer.first_name}!</h1>
-      <h4>Here is a list of your applications:</h4>
-      <table>
-        <thead>
-          <tr>
-            <th>Date of Appointment</th>
-            <th>Application Date</th>
-            <th>Amount</th>
-            <th>Client</th>
-            <th>Client Phone</th>
-            <th>Client Email</th>
-            <th>Tattoo Description</th>
-            <th>Payment Status</th>
-            <th>Upload Artwork</th>
-            <th>Artwork Status</th>
-          </tr>
-          {applications.map((application) => (
-            <tr key={application.id}>
-              <td>{application.date_of_appt}</td>
-              <td>{application.friendly_created_at}</td>
-              <td>{application.amount}</td>
-              <td>
-                {getUserName(application.tattooer_id, "first_name")} {getUserName(application.tattooer_id, "last_name")}
-              </td>
-              <td>{}</td>
-              <td>{}</td>
-              <td>{}</td>
-              <td>{application.description}</td>
+    <div className="dashboard">
+      <div>
+        <h1>Howdy {currentTattooer.first_name}!</h1>
+        <h4>Here is a list of your applications:</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Date of Appointment</th>
+              <th>Application Date</th>
+              <th>Amount</th>
+              <th>Client</th>
+              <th>Client Phone</th>
+              <th>Client Email</th>
+              <th>Tattoo Description</th>
+              <th>Payment Status</th>
+              <th>Upload Artwork</th>
+              <th>Artwork Status</th>
             </tr>
-          ))}
-        </thead>
-      </table>
+            {applications.map((application) => (
+              <tr key={application.id}>
+                <td>{application.date_of_appt}</td>
+                <td>{application.friendly_created_at}</td>
+                <td>{application.amount}</td>
+                <td>
+                  {getUserName(application.tattooer_id, "first_name")}{" "}
+                  {getUserName(application.tattooer_id, "last_name")}
+                </td>
+                <td>{}</td>
+                <td>{}</td>
+                <td>{}</td>
+                <td>{application.description}</td>
+              </tr>
+            ))}
+          </thead>
+        </table>
+      </div>
     </div>
   );
 }

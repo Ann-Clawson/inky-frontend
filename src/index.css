@@ -114,13 +114,10 @@ html, body {
 /* END HOME */
 
 /* BEGIN DASHBOARD */
-/* .dashboard {
-  padding-top: 95px;
-  text-align: center;
+.dashboard {
   display: flex;
-  align-items: center;
-  justify-items: center;
-} */
+  justify-content: center;
+}
 /* END DASHBOARD */
 
 /* BEGIN ABOUT */
