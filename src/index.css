@@ -122,6 +122,14 @@ html, body {
 }
 /* END DASHBOARD */
 
+/* BEGIN ABOUT */
+.about {
+  color: black !important;
+  padding-top: 75px;
+}
+
+/* END ABOUT */
+
 /* FOOTER BEGIN */
 footer {
   text-align: center;
