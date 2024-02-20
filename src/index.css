@@ -112,7 +112,7 @@ html, body {
 
 /* BEGIN DASHBOARD */
 .dashboard {
-  padding-top: 75px;
+  padding-top: 95px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -123,15 +123,20 @@ html, body {
 /* BEGIN ABOUT */
 .about {
   color: black !important;
-  padding-top: 75px;
+  padding-top: 95px;
   text-align: center;
-  background-color: rgba(52, 51, 51, 0.1);
+  /* background-color: rgba(52, 51, 51, 0.1); */
   height: 100vh;
 }
 
 .about-inky {
   color: rgb(138, 223, 244);
   text-shadow: 2px 2px 3px black;
+}
+
+.about-support {
+  padding: 20px 100px 0px;
+  font-size: 20px;
 }
 
 /* END ABOUT */
