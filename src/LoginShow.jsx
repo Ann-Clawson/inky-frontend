@@ -1,22 +1,3 @@
-// /* eslint-disable react/prop-types */
-// import { Link } from "react-router-dom";
-
-// export function LoginShow(props) {
-//   // console.log("Howdy world!");
-//   return (
-//     <div>
-//       <h1>Who is logging in?</h1>
-//       <Link to="/userlogin" onClick={props.onClose}>
-//         User
-//       </Link>
-//       <br />
-//       <Link to="/tattooerlogin" onClick={props.onClose}>
-//         Tattooer
-//       </Link>
-//     </div>
-//   );
-// }
-
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -66,7 +47,7 @@ export function LoginShow() {
         });
     }
 
-    //log out due to inactivity
+    //log out due to inactivity in progress
     // const LogoutDueToInactivity = () => {
     //   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
