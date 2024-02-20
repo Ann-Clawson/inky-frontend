@@ -18,7 +18,6 @@ export function UserLogin() {
       axios
         .post("http://localhost:3000/sessions.json", params)
         .then((response) => {
-          // console.log(response.data);
           axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
           localStorage.setItem("user_id", response.data.user_id);
@@ -33,7 +32,6 @@ export function UserLogin() {
       axios
         .post("http://localhost:3000/tattooer_sessions.json", params)
         .then((response) => {
-          // console.log(response.data);
           axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
           localStorage.setItem("tattooer_id", response.data.tattooer_id);
@@ -46,7 +44,7 @@ export function UserLogin() {
         });
     }
 
-    //log out due to inactivity
+    //log out due to inactivity in progress
     // const LogoutDueToInactivity = () => {
     //   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
