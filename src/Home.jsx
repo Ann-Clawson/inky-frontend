@@ -1,4 +1,22 @@
 export function Home() {
+  let financingButton;
+  if (localStorage.jwt === undefined) {
+    financingButton = (
+      <a href="/about">
+        <button type="button" className="btn btn-outline-info btn-bnr">
+          <i>Apply for Tattoo Financing</i>
+        </button>
+      </a>
+    );
+  } else {
+    financingButton = (
+      <a href="/apply">
+        <button type="button" className="btn btn-outline-info btn-bnr">
+          <i>Apply for Tattoo Financing</i>
+        </button>
+      </a>
+    );
+  }
   return (
     <div className="home" id="home">
       <div className="banner-container">
@@ -14,11 +32,7 @@ export function Home() {
             <strong>inky</strong> should be for everyone, too.
           </p>
         </div>
-        <a href="/about">
-          <button type="button" className="btn btn-outline-info btn-bnr">
-            <i>Apply for Tattoo Financing</i>
-          </button>
-        </a>
+        <div>{financingButton}</div>
       </div>
     </div>
   );
