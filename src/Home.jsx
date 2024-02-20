@@ -22,7 +22,7 @@ export function Home() {
       <div className="banner-container">
         <div className="banner">
           <h1>
-            <span className="inky">inky</span> is for everyone<span> &copy;</span>
+            <span className="inky">inky</span> is for everyone<span className="copyright"> &copy;</span>
           </h1>
         </div>
         <div>

@@ -1,4 +1,4 @@
-span {
+.copyright {
   font-size: 12px;
 }
 html, body {
@@ -88,24 +88,24 @@ html, body {
   background: transparent;
   box-shadow: none;
   color: white;
-  text-shadow: 5px 2px 5px black;
+  /* text-shadow: 5px 2px 5px black; */
   border:1px solid rgb(138, 223, 244);
   border-radius: 2px !important;
 }
 
 .btn-bnr:hover  {
   color:rgb(39, 38, 39);
-  background: rgb(138, 223, 244, 0.80) !important;
-  background: linear-gradient(0deg, rgb(138, 223, 244, 1) 75%, rgb(120, 215, 255)100%);
+  background: rgb(138, 223, 244, 0.90) !important;
+  /* background: linear-gradient(0deg, rgb(138, 223, 244, 1) 75%, rgb(120, 215, 255)100%); */
   border:1px solid rgba(52, 51, 51, 0.5) !important;
-  text-shadow: 1px 1px 2px rgb(197, 242, 245);
+  /* text-shadow: 1px 1px 2px rgb(197, 242, 245); */
 }
 
 .btn-bnr:active {
   background: transparent !important;
   box-shadow: none !important;
   color: white !important;
-  text-shadow: 5px 2px 5px black !important;
+  /* text-shadow: 5px 2px 5px black !important; */
   border:1px solid rgb(138, 223, 244) !important;
 }
 /* END HOME */
@@ -125,7 +125,9 @@ html, body {
   color: black !important;
   padding-top: 95px;
   text-align: center;
-  /* background-color: rgba(52, 51, 51, 0.1); */
+  background-image: url(./assets/about_background.jpg);
+  background-size: 50%;
+  background-repeat: repeat;
   height: 100vh;
 }
 
