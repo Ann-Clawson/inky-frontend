@@ -78,7 +78,7 @@ export function Application(props) {
   };
 
   return (
-    <div>
+    <div className="application">
       <h1>Financing Application</h1>
       <form onSubmit={handleSubmit}>
         <div>

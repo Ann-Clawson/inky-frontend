@@ -121,7 +121,7 @@ html, body {
 /* END DASHBOARD */
 
 /* BEGIN ABOUT */
-.about, .dashboard {
+.about, .dashboard, .application, .user-signup, .tattoer-signup {
   color: black !important;
   padding-top: 95px;
   text-align: center;

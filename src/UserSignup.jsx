@@ -12,7 +12,7 @@ export function UserSignup() {
   };
 
   return (
-    <div>
+    <div className="user-signup">
       <div>
         <h1>Users Sign Up</h1>
         <form onSubmit={handleUserSubmit}>
