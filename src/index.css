@@ -43,7 +43,7 @@ html, body {
 #home {
   height: 100vh;
   width: 100vw;
-  background-image: url("./assets/transparentbackground.jpg");
+  background-image: url("./assets/WEBtransparentbackground.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -112,8 +112,6 @@ html, body {
 
 /* BEGIN DASHBOARD */
 .dashboard {
-  /* height: 100vh;
-  width: 100vw; */
   padding-top: 75px;
   text-align: center;
   display: flex;
@@ -126,6 +124,14 @@ html, body {
 .about {
   color: black !important;
   padding-top: 75px;
+  text-align: center;
+  background-color: rgba(52, 51, 51, 0.1);
+  height: 100vh;
+}
+
+.about-inky {
+  color: rgb(138, 223, 244);
+  text-shadow: 2px 2px 3px black;
 }
 
 /* END ABOUT */
@@ -134,5 +140,7 @@ html, body {
 footer {
   text-align: center;
   padding: 13px 0px 1px;
+  bottom: 0%;
+  width: 100%;
 }
 /* FOOTER END */

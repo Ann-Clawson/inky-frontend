@@ -25,7 +25,7 @@ export function Home() {
             <span className="inky">inky</span> is for everyone<span> &copy;</span>
           </h1>
         </div>
-        <div className="">
+        <div>
           <p className="for-everyone">
             Ink should be for everyone. <br />
             With fair and equitable lending practices and fast and secure artist payments, <br />
