@@ -9,7 +9,7 @@ export function Application(props) {
   const [interestRate, setInterestRate] = useState(0.0);
 
   const handleIndexTattooers = () => {
-    axios.get("http://localhost:3000/tattooers.json").then((response) => {
+    axios.get(`${import.meta.env.VITE_APP_API_URL}/tattooers.json`).then((response) => {
       setTattooers(response.data);
     });
   };
