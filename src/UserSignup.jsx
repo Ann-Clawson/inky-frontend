@@ -4,7 +4,7 @@ export function UserSignup() {
   const handleUserSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    axios.post("http://localhost:3000/users.json", params).then((response) => {
+    axios.post(`${import.meta.env.VITE_APP_API_URL}/users.json`, params).then((response) => {
       console.log(response.data);
       event.target.reset();
       window.location.href = "/userlogin";

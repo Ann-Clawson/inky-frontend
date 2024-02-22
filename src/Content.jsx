@@ -12,7 +12,7 @@ import { TattooerDashboard } from "./TattooerDashboard";
 
 export function Content() {
   const handleCreateApplication = (params) => {
-    axios.post("http://localhost:3000/applications.json", params).then((response) => {
+    axios.post(`${import.meta.env.VITE_APP_API_URL}/applications.json`, params).then((response) => {
       console.log(response.data);
     });
   };

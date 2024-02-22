@@ -10,19 +10,19 @@ export function TattooerDashboard() {
   let tattooerID = localStorage.getItem("tattooer_id");
 
   const getTattooer = (tattooerID) => {
-    axios.get(`http://localhost:3000/tattooers/${tattooerID}.json`).then((response) => {
+    axios.get(`${import.meta.env.VITE_APP_API_URL}/tattooers/${tattooerID}.json`).then((response) => {
       setCurrentTattooer(response.data);
     });
   };
 
   const getApplications = () => {
-    axios.get("http://localhost:3000/applications.json").then((response) => {
+    axios.get(`${import.meta.env.VITE_APP_API_URL}/applications.json`).then((response) => {
       setApplications(response.data);
     });
   };
 
   const handleIndexUsers = () => {
-    axios.get("http://localhost:3000/users.json").then((response) => {
+    axios.get(`${import.meta.env.VITE_APP_API_URL}/users.json`).then((response) => {
       setUsers(response.data);
     });
   };

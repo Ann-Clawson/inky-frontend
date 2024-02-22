@@ -16,7 +16,7 @@ export function LoginShow() {
     const params = new FormData(event.target);
     if (!isTattooer) {
       axios
-        .post("http://localhost:3000/sessions.json", params)
+        .post(`${import.meta.env.VITE_APP_API_URL}/sessions.json`, params)
         .then((response) => {
           axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
@@ -31,7 +31,7 @@ export function LoginShow() {
         });
     } else {
       axios
-        .post("http://localhost:3000/tattooer_sessions.json", params)
+        .post(`${import.meta.env.VITE_APP_API_URL}/tattooer_sessions.json`, params)
         .then((response) => {
           axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);

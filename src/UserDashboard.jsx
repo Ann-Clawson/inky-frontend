@@ -10,19 +10,19 @@ export function UserDashboard() {
   let userID = localStorage.getItem("user_id");
 
   const getUser = (userID) => {
-    axios.get(`http://localhost:3000/users/${userID}.json`).then((response) => {
+    axios.get(`${import.meta.env.VITE_APP_API_URL}/users/${userID}.json`).then((response) => {
       setCurrentUser(response.data);
     });
   };
 
   const getApplications = () => {
-    axios.get("http://localhost:3000/applications.json").then((response) => {
+    axios.get(`${import.meta.env.VITE_APP_API_URL}/applications.json`).then((response) => {
       setApplications(response.data);
     });
   };
 
   const handleIndexTattooers = () => {
-    axios.get("http://localhost:3000/tattooers.json").then((response) => {
+    axios.get(`${import.meta.env.VITE_APP_API_URL}/tattooers.json`).then((response) => {
       setTattooers(response.data);
     });
   };
