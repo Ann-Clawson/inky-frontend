@@ -137,8 +137,28 @@ html, body {
   font-size: 20px;
 }
 
-.btn-abt{
-  
+.btn-abt {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  background: transparent;
+  box-shadow: none;
+  color: rgb(39, 38, 39);
+  border:1px solid rgb(138, 223, 244);
+  border-radius: 2px !important;
+}
+
+.btn-abt:hover  {
+  color:white;
+  text-shadow: 1px 1px 2px black;
+  background: rgb(138, 223, 244, 0.90) !important;
+}
+
+.btn-abt:active {
+  background: transparent !important;
+  box-shadow: none !important;
+  color: rgb(39, 38, 39) !important;
+  border:1px solid rgb(138, 223, 244) !important;
 }
 /* END ABOUT */
 

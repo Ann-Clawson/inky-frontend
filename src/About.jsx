@@ -4,18 +4,12 @@ export function About() {
     aboutButton = (
       <a href="/usersignup">
         <button type="button" className="btn btn-outline-info btn-abt">
-          <i>Apply for Tattoo Financing</i>
+          <i>Sign up to apply</i>
         </button>
       </a>
     );
   } else {
-    aboutButton = (
-      <a href="/apply">
-        <button type="button" className="btn btn-outline-info btn-abt">
-          <i>Apply for Tattoo Financing</i>
-        </button>
-      </a>
-    );
+    // let aboutButton;
   }
   return (
     <div className="about">
