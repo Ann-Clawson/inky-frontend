@@ -1,4 +1,22 @@
 export function About() {
+  let aboutButton;
+  if (localStorage.jwt === undefined) {
+    aboutButton = (
+      <a href="/about">
+        <button type="button" className="btn btn-outline-info btn-bnr">
+          <i>Apply for Tattoo Financing</i>
+        </button>
+      </a>
+    );
+  } else {
+    aboutButton = (
+      <a href="/apply">
+        <button type="button" className="btn btn-outline-info btn-bnr">
+          <i>Apply for Tattoo Financing</i>
+        </button>
+      </a>
+    );
+  }
   return (
     <div className="about">
       <h2>
@@ -21,6 +39,9 @@ export function About() {
         whatever.Quinoa you probably haven&apos;t heard of them ennui, trust fund tofu banh mi flexitarian bicycle
         rights echo park gentrify messenger bag.
       </p>
+      <a>
+        <button>{aboutButton}</button>
+      </a>
     </div>
   );
 }
