@@ -162,6 +162,15 @@ html, body {
 }
 /* END ABOUT */
 
+.applyModal a{
+  text-decoration: none;
+  color: rgb(138, 223, 244);
+}
+
+.applyModal a:hover{
+  color: rgb(39, 38, 39);
+}
+
 /* FOOTER BEGIN */
 footer {
   text-align: center;
