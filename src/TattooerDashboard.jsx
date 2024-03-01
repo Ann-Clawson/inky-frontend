@@ -54,6 +54,8 @@ export function TattooerDashboard() {
               <th>Payment Status</th>
               <th>Upload Artwork</th>
             </tr>
+          </thead>
+          <tbody>
             {applications.map((application) => (
               <tr key={application.id}>
                 <td>{application.date_of_appt}</td>
@@ -69,7 +71,7 @@ export function TattooerDashboard() {
                 <td>Payment Received</td>
               </tr>
             ))}
-          </thead>
+          </tbody>
         </table>
       </div>
     </div>

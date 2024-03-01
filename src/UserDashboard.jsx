@@ -54,6 +54,8 @@ export function UserDashboard() {
               <th>Interest Rate</th>
               <th>Monthly Payment</th>
             </tr>
+          </thead>
+          <tbody>
             {applications.map((application) => (
               <tr key={application.id}>
                 <td>{application.friendly_created_at}</td>
@@ -70,7 +72,7 @@ export function UserDashboard() {
                 <td>${application.monthly_payment}</td>
               </tr>
             ))}
-          </thead>
+          </tbody>
         </table>
       </div>
     </div>
