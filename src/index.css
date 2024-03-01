@@ -167,13 +167,15 @@ html, body {
 /* END ABOUT */
 
 /* MODAL START */
-.applyModal a{
+.applyModal a, h4 a{
   text-decoration: none;
   color: rgb(138, 223, 244);
+  text-shadow: 2px 2px 3px black;
 }
 
-.applyModal a:hover{
+.applyModal a:hover, h4 a:hover{
   color: rgb(39, 38, 39);
+  text-shadow: none;
 }
 /* MODAL END*/
 
