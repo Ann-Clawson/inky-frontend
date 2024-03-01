@@ -83,7 +83,7 @@ export function Application(props) {
       <form onSubmit={handleSubmit} className="app-form">
         <div className="mb-3">
           <label htmlFor="tattooers-select" className="form-label">
-            Tattooer
+            Tattooer:
           </label>
           <select id="tattooers-select" name="tattooer_id" required>
             <option value="">Select a tattooer</option>
