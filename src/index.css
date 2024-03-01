@@ -179,6 +179,12 @@ html, body {
 }
 /* MODAL END*/
 
+/* APPLICATION BEGIN */
+.app-form {
+  padding-top: 30PX;
+}
+/* APPLICATION END */
+
 /* FOOTER BEGIN */
 footer {
   text-align: center;

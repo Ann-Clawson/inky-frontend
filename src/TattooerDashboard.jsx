@@ -31,6 +31,8 @@ export function TattooerDashboard() {
   useEffect(getApplications, []);
   useEffect(handleIndexUsers, []);
 
+  console.log(applications);
+
   const getUserName = (userId, nameType) => {
     const user = users.find((u) => u.id === userId);
     return user ? user[nameType] : "Unknown user";

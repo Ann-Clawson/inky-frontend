@@ -80,9 +80,11 @@ export function Application(props) {
   return (
     <div className="application">
       <h1>Financing Application</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          Tattooer:{" "}
+      <form onSubmit={handleSubmit} className="app-form">
+        <div className="mb-3">
+          <label htmlFor="tattooers-select" className="form-label">
+            Tattooer
+          </label>
           <select id="tattooers-select" name="tattooer_id" required>
             <option value="">Select a tattooer</option>
             {tattooers.map((tattooer) => (
@@ -92,10 +94,10 @@ export function Application(props) {
             ))}
           </select>
         </div>
-        <div>
+        <div className="mb-3">
           Amount: <input name="amount" type="number" min="100" max="2500" required />
         </div>
-        <div>
+        <div className="mb-3">
           Number of Months:
           <select id="number-of-months-select" name="number_of_months" required>
             <option value="">Select a term</option>
@@ -103,10 +105,10 @@ export function Application(props) {
             <option value="12">12</option>
           </select>
         </div>
-        <div>
+        <div className="mb-3">
           Description: <input name="description" type="text" required />
         </div>
-        <div>
+        <div className="mb-3">
           Date of Appointment: <input name="date_of_appt" type="text" required />
         </div>
         <input type="hidden" name="approved" value={approvedValue} />
