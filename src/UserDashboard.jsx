@@ -17,7 +17,7 @@ export function UserDashboard() {
 
   const getApplications = () => {
     axios.get(`${import.meta.env.VITE_APP_API_URL}/applications.json`).then((response) => {
-      setApplications(response.data);
+      setApplications(response.data.reverse());
     });
   };
 
@@ -41,7 +41,7 @@ export function UserDashboard() {
       <div>
         <h1>Howdy {currentUser.first_name}!</h1>
         <h4>Here is a list of your applications:</h4>
-        <table>
+        <table className="table">
           <thead>
             <tr>
               <th>Application Date</th>

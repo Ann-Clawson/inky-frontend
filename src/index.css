@@ -114,6 +114,10 @@ html, body {
   display: flex;
   justify-content: center;
 }
+
+.table{
+  padding-top: 30px !important;
+}
 /* END DASHBOARD */
 
 /* BEGIN ABOUT */
@@ -162,6 +166,7 @@ html, body {
 }
 /* END ABOUT */
 
+/* MODAL START */
 .applyModal a{
   text-decoration: none;
   color: rgb(138, 223, 244);
@@ -170,6 +175,7 @@ html, body {
 .applyModal a:hover{
   color: rgb(39, 38, 39);
 }
+/* MODAL END*/
 
 /* FOOTER BEGIN */
 footer {
