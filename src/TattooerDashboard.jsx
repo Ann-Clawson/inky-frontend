@@ -63,7 +63,7 @@ export function TattooerDashboard() {
                   {getUserName(application.tattooer_id, "first_name")}{" "}
                   {getUserName(application.tattooer_id, "last_name")}
                 </td>
-                <td>{}</td>
+                <td>{getUserName(application.tattooer_id, "phone_number")}</td>
                 <td>{}</td>
                 <td>{application.description}</td>
               </tr>
