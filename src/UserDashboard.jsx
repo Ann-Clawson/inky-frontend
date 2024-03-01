@@ -41,7 +41,7 @@ export function UserDashboard() {
       <div>
         <h1>Howdy {currentUser.first_name}!</h1>
         <h4>Here is a list of your applications:</h4>
-        <table className="table">
+        <table className="table dash-table">
           <thead>
             <tr>
               <th>Application Date</th>

@@ -41,7 +41,7 @@ export function TattooerDashboard() {
       <div>
         <h1>Howdy {currentTattooer.first_name}!</h1>
         <h4>Here is a list of your clients:</h4>
-        <table className="table">
+        <table className="table dash-table">
           <thead>
             <tr>
               <th>Date of Appointment</th>
