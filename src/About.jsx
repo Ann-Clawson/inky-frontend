@@ -9,7 +9,13 @@ export function About() {
       </a>
     );
   } else {
-    // let aboutButton;
+    aboutButton = (
+      <a href="/apply">
+        <button type="button" className="btn btn-outline-info btn-abt">
+          <i>Submit an application</i>
+        </button>
+      </a>
+    );
   }
   return (
     <div className="about">
