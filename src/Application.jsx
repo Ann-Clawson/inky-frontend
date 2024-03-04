@@ -95,10 +95,15 @@ export function Application(props) {
           </select>
         </div>
         <div className="mb-3">
-          Amount: <input name="amount" type="number" min="100" max="2500" required />
+          <label htmlFor="amount" className="form-label">
+            Amount:
+          </label>{" "}
+          <input name="amount" type="number" min="100" max="2500" required />
         </div>
         <div className="mb-3">
-          Number of Months:
+          <label htmlFor="number_of_months" className="form-label">
+            Number of Months:
+          </label>{" "}
           <select id="number-of-months-select" name="number_of_months" required>
             <option value="">Select a term</option>
             <option value="6">6</option>
@@ -106,10 +111,16 @@ export function Application(props) {
           </select>
         </div>
         <div className="mb-3">
-          Description: <input name="description" type="text" required />
+          <label htmlFor="description" className="form-label">
+            Description:
+          </label>{" "}
+          <input name="description" type="text" required />
         </div>
         <div className="mb-3">
-          Date of Appointment: <input name="date_of_appt" type="text" required />
+          <label htmlFor="date_of_appt" className="form-label">
+            Date of Appointment:
+          </label>{" "}
+          <input name="date_of_appt" type="text" required />
         </div>
         <input type="hidden" name="approved" value={approvedValue} />
         <input type="hidden" name="interest_rate" value={interestRate} />
