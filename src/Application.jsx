@@ -84,7 +84,7 @@ export function Application(props) {
         <div className="mb-3">
           <label htmlFor="tattooers-select" className="form-label">
             Tattooer:
-          </label>
+          </label>{" "}
           <select id="tattooers-select" name="tattooer_id" required>
             <option value="">Select a tattooer</option>
             {tattooers.map((tattooer) => (
