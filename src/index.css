@@ -118,6 +118,12 @@ html, body {
 .dash-table {
   margin-top: 30px;
 }
+
+.user-profile-view-btn {
+  padding-bottom: 35px;
+
+}
+
 /* END DASHBOARD */
 
 /* BEGIN ABOUT */

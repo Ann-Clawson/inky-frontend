@@ -38,7 +38,7 @@ export function UserDashboard() {
 
   return (
     <div className="dashboard">
-      <div>
+      <div className="user-profile-view-btn">
         <button>View Profile</button>
       </div>
       <div>
