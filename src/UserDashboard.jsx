@@ -39,6 +39,9 @@ export function UserDashboard() {
   return (
     <div className="dashboard">
       <div>
+        <button>Update Profile</button>
+      </div>
+      <div>
         <h1>Howdy {currentUser.first_name}!</h1>
         <h4>Here is a list of your applications:</h4>
         <table className="table dash-table">

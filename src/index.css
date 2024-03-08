@@ -111,7 +111,7 @@ html, body {
 
 /* BEGIN DASHBOARD */
 .dashboard {
-  display: flex;
+  display: block;
   justify-content: center;
 }
 
