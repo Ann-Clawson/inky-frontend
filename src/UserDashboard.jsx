@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-export function UserDashboard() {
+export function UserDashboard(props) {
   const [currentUser, setCurrentUser] = useState({});
   const [applications, setApplications] = useState([]);
   const [tattooers, setTattooers] = useState([]);
@@ -39,7 +41,9 @@ export function UserDashboard() {
   return (
     <div className="dashboard">
       <div className="user-profile-view-btn">
-        <button>View Profile</button>
+        <button>
+          <Link onClick={() => props.handleProfileShow()}>View Profile</Link>
+        </button>
       </div>
       <div>
         <h1>Howdy {currentUser.first_name}!</h1>

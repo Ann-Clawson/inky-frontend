@@ -38,12 +38,25 @@ function App() {
   const handleLoginClose = () => {
     setIsLoginShowVisible(false);
   };
+
+  // const [isProfileShowVisible, setIsProfileShowVisible] = useState(false);
+
+  // const handleProfileShow = () => {
+  //   setIsProfileShowVisible(true);
+  // };
+
+  // const handleProfileClose = () => {
+  //   setIsProfileShowVisible(false);
+  // };
   return (
     <div>
       <BrowserRouter>
         <Header onSignupShow={handleSignupShow} onApplyShow={handleApplyShow} onLoginShow={handleLoginShow} />
         <Content />
         <Footer />
+        {/* <Modal show={isProfileShowVisible} onClose={handleProfileClose}>
+          <ProfileShow onClose={handleProfileClose} />
+        </Modal> */}
         <Modal show={isSignupShowVisible} onClose={handleSignupClose}>
           <SignupShow onClose={handleSignupClose} />
         </Modal>
