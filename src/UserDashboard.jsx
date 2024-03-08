@@ -39,7 +39,7 @@ export function UserDashboard() {
   return (
     <div className="dashboard">
       <div>
-        <button>Update Profile</button>
+        <button>View Profile</button>
       </div>
       <div>
         <h1>Howdy {currentUser.first_name}!</h1>
