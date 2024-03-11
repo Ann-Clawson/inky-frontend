@@ -20,15 +20,15 @@ export function Content() {
     });
   };
 
-  const [isProfileShowVisible, setIsProfileShowVisible] = useState(false);
+  // const [isProfileShowVisible, setIsProfileShowVisible] = useState(false);
 
   const handleProfileShow = () => {
     setIsProfileShowVisible(true);
   };
 
-  const handleProfileClose = () => {
-    setIsProfileShowVisible(false);
-  };
+  // const handleProfileClose = () => {
+  //   setIsProfileShowVisible(false);
+  // };
 
   return (
     <div>

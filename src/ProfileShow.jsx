@@ -2,7 +2,7 @@
 export function ProfileShow(props) {
   return (
     <div>
-      <h1 onClick={props.onClose}>Hello, world!</h1>
+      <h1 onClick={props.onClose}>{props.user.first_name}</h1>
     </div>
   );
 }
