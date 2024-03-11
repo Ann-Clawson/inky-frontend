@@ -3,6 +3,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Modal } from "./Modal";
+import { ProfileShow } from "./ProfileShow";
 
 export function UserDashboard(props) {
   const [currentUser, setCurrentUser] = useState({});
@@ -38,11 +40,21 @@ export function UserDashboard(props) {
     return tattooer ? tattooer[nameType] : "Unknown Tattooer";
   };
 
+  const [isProfileShowVisible, setIsProfileShowVisible] = useState(false);
+
+  const handleProfileShow = () => {
+    setIsProfileShowVisible(true);
+  };
+
+  const handleProfileClose = () => {
+    setIsProfileShowVisible(false);
+  };
+
   return (
     <div className="dashboard">
       <div className="user-profile-view-btn">
         <button>
-          <Link onClick={() => props.handleProfileShow()}>View Profile</Link>
+          <Link onClick={() => handleProfileShow()}>View Profile</Link>
         </button>
       </div>
       <div>
@@ -82,6 +94,10 @@ export function UserDashboard(props) {
           </tbody>
         </table>
       </div>
+      <Modal show={isProfileShowVisible} onClose={handleProfileClose}>
+        <ProfileShow />
+        {/* <ProfileShow onUpdateUser={handleUpdateUser} user={currentUser} />  */}
+      </Modal>
     </div>
   );
 }

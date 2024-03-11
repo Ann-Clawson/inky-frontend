@@ -43,9 +43,10 @@ export function Content() {
         <Route path="/userdashboard" element={<UserDashboard handleProfileShow={handleProfileShow} />} />
         <Route path="/tattooerdashboard" element={<TattooerDashboard />} />
       </Routes>
-      <Modal show={isProfileShowVisible} onClose={handleProfileClose}>
+      {/* <Modal show={isProfileShowVisible} onClose={handleProfileClose}>
         <ProfileShow />
-      </Modal>
+        <ProfileShow onUpdateUser={handleUpdateUser} user={currentUser} /> 
+      </Modal> */}
     </div>
   );
 }
