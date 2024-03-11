@@ -94,8 +94,8 @@ export function UserDashboard(props) {
           </tbody>
         </table>
       </div>
-      <Modal show={isProfileShowVisible} onClose={handleProfileClose} user={currentUser}>
-        <ProfileShow />
+      <Modal show={isProfileShowVisible} onClose={handleProfileClose}>
+        <ProfileShow user={currentUser} />
         {/* <ProfileShow onUpdateUser={handleUpdateUser} user={currentUser} />  */}
       </Modal>
     </div>
