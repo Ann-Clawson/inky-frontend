@@ -191,13 +191,44 @@ html, body {
 /* APPLICATION END */
 
 /* USER SIGNUP BEGIN */
-.user-signup{
-/* justify-items: center; */
+.user-signup {
+  display: flex;
+  justify-content: center;
+  /* padding: 20px; */
 }
 
-.signup-form-container{
-  /* width: 30%; */
+.signup-form-container {
+  width: 100%;
+  max-width: 400px; /* Adjust the max width as needed */
 }
+
+.signup-form-container form div {
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 15px; */
+}
+
+.signup-form-container form div input {
+  margin-top: 5px;
+  padding: 8px;
+  width: 100%; /* Ensures that input takes the full width of its parent */
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+.signup-form-container form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.signup-form-container form button:hover {
+  background-color: #0056b3;
+}
+
 /* USER SIGNUP END */
 
 /* FOOTER BEGIN */
