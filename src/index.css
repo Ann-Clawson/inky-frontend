@@ -221,7 +221,7 @@ html, body {
 .signup-form-container form button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: rgb(138, 223, 244);
   color: white;
   border: none;
   cursor: pointer;
