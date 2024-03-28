@@ -190,6 +190,16 @@ html, body {
 }
 /* APPLICATION END */
 
+/* USER SIGNUP BEGIN */
+.user-signup{
+justify-items: center;
+}
+
+.signup-form-container{
+  /* width: 30%; */
+}
+/* USER SIGNUP END */
+
 /* FOOTER BEGIN */
 footer {
   text-align: center;

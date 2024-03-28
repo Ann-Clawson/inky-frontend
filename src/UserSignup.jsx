@@ -13,7 +13,7 @@ export function UserSignup() {
 
   return (
     <div className="user-signup">
-      <div>
+      <div className="signup-form-container">
         <h1>Users Sign Up</h1>
         <form onSubmit={handleUserSubmit}>
           <div>
