@@ -200,12 +200,14 @@ html, body {
 .signup-form-container {
   width: 100%;
   max-width: 400px; /* Adjust the max width as needed */
+  margin-bottom: 50px;
 }
 
 .signup-form-container form div {
   display: flex;
   flex-direction: column;
   text-align: left;
+  padding-bottom: 25px;
   /* margin-bottom: 15px; */
 }
 
