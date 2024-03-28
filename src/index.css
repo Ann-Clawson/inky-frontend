@@ -192,7 +192,7 @@ html, body {
 
 /* USER SIGNUP BEGIN */
 .user-signup{
-justify-items: center;
+/* justify-items: center; */
 }
 
 .signup-form-container{
