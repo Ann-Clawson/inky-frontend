@@ -17,13 +17,13 @@ export function UserSignup() {
         <h1>Users Sign Up</h1>
         <form onSubmit={handleUserSubmit}>
           <div>
-            First Name: <input name="first_name" type="text" required />
+            First Name: <input name="first_name" type="text" className="form-control" required />
           </div>
           <div>
-            Last Name: <input name="last_name" type="text" required />
+            Last Name: <input name="last_name" type="text" className="form-control" required />
           </div>
           <div>
-            Address: <input name="address" type="text" required />
+            Address: <input name="address" type="text" className="form-control" required />
           </div>
           <div>
             Phone Number: <input name="phone_number" type="text" required />
