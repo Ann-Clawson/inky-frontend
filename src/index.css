@@ -205,6 +205,7 @@ html, body {
 .signup-form-container form div {
   display: flex;
   flex-direction: column;
+  text-align: left;
   /* margin-bottom: 15px; */
 }
 
