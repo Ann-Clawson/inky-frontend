@@ -201,8 +201,9 @@ html, body {
 
 .signup-form-container {
   width: 100%;
+  height: 100%;
   max-width: 400px; /* Adjust the max width as needed */
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 
 .signup-form-container form div {
@@ -240,6 +241,7 @@ html, body {
 footer {
   text-align: center;
   padding: 13px 0px 1px;
+
   bottom: 0%;
   width: 100%;
   border-top: 1px solid rgb(237, 236, 236);
