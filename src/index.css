@@ -197,6 +197,7 @@ html, body {
   display: flex;
   justify-content: center;
   /* padding: 20px; */
+
 }
 
 .signup-form-container {
@@ -204,6 +205,7 @@ html, body {
   height: 100%;
   max-width: 400px; /* Adjust the max width as needed */
   /* margin-bottom: 50px; */
+
 }
 
 .signup-form-container form div {
@@ -241,7 +243,6 @@ html, body {
 footer {
   text-align: center;
   padding: 13px 0px 1px;
-
   bottom: 0%;
   width: 100%;
   border-top: 1px solid rgb(237, 236, 236);
