@@ -1,6 +1,9 @@
 import axios from "axios";
+import { useState } from "react";
 
 export function UserSignup() {
+  const [passwordLength, setPasswordLength] = useState([]);
+
   const handleUserSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
@@ -33,7 +36,17 @@ export function UserSignup() {
               Email <input name="email" type="email" required />
             </div>
             <div>
-              Password <input name="password" type="password" required />
+              Password
+              <input
+                name="password"
+                type="password"
+                required
+                onChange={(event) => setPasswordLength(event.target.value)}
+              />
+              <small>
+                minimum 5 characters, <span className="password-small">{5 - passwordLength.length} </span>
+                characters remaining
+              </small>
             </div>
             <div>
               Password confirmation <input name="password_confirmation" type="password" required />

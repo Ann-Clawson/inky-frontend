@@ -241,6 +241,10 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.password-small {
+  color: rgb(205, 26, 26)
+}
 /* USER SIGNUP END */
 
 /* FOOTER BEGIN */
