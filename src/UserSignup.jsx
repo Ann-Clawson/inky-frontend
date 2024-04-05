@@ -44,7 +44,8 @@ export function UserSignup() {
                 onChange={(event) => setPasswordLength(event.target.value)}
               />
               <small>
-                minimum 5 characters, <span className="password-small">{5 - passwordLength.length} </span>
+                minimum 5 characters,{" "}
+                <span className="password-small">{passwordLength.length <= 5 ? 5 - passwordLength.length : 0} </span>
                 characters remaining
               </small>
             </div>
