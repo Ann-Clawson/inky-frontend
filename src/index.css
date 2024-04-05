@@ -236,6 +236,11 @@ html, body {
   background-color: #0056b3;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 /* USER SIGNUP END */
 
 /* FOOTER BEGIN */

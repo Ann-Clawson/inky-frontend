@@ -27,7 +27,7 @@ export function UserSignup() {
               Address <input name="address" type="text" required />
             </div>
             <div>
-              Phone Number <input name="phone_number" type="text" required />
+              Phone Number <input name="phone_number" type="number" required className="phone" />
             </div>
             <div>
               Email <input name="email" type="email" required />
