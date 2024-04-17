@@ -22,6 +22,11 @@ export function UserSignup() {
             We&apos;re glad you&apos;re here! <br />
             Tell us a little bit about yourself.
           </h2>
+          <small>
+            <i>
+              If you&apos;d like to join our community as a tattooer, click <a href="/tattooersignup">here</a>.
+            </i>
+          </small>
           <form onSubmit={handleUserSubmit}>
             <div>
               First Name <input name="first_name" type="text" required />
