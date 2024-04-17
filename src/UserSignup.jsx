@@ -18,7 +18,10 @@ export function UserSignup() {
     <div className="user-signup">
       <div className="signup-form-container">
         <div>
-          <h1>Join our growing community and apply for tattoo financing today</h1>
+          <h2>
+            We&apos;re glad you&apos;re here! <br />
+            Tell us a little bit about yourself.
+          </h2>
           <form onSubmit={handleUserSubmit}>
             <div>
               First Name <input name="first_name" type="text" required />
