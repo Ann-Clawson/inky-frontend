@@ -1,9 +1,11 @@
 export function ApplyShow() {
   return (
     <div className="applyModal">
-      <h2>You must be logged in to do that, bruh!</h2>
+      <h2>
+        Welcome to <span>inky</span>!
+      </h2>
       <h3>
-        <a href="/usersignup">Sign up</a> and log in.
+        To apply, please <a href="/usersignup">Sign up</a> and log in.
       </h3>
     </div>
   );

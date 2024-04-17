@@ -174,7 +174,7 @@ html, body {
 /* END ABOUT */
 
 /* MODAL START */
-.applyModal a, h4 a{
+.applyModal a, h4 a, span{
   text-decoration: none;
   color: rgb(138, 223, 244);
   text-shadow: 2px 2px 3px black;
