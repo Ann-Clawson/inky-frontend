@@ -174,13 +174,13 @@ html, body {
 /* END ABOUT */
 
 /* MODAL START */
-.applyModal a, h4 a, span{
+.applyModal a, .applyModal h4 a, .applyModal span, .signup-modal a{
   text-decoration: none;
   color: rgb(138, 223, 244);
   text-shadow: 2px 2px 3px black;
 }
 
-.applyModal a:hover, h4 a:hover{
+.applyModal a:hover, .applyModal h4 a:hover, .signup-modal a:hover{
   color: rgb(39, 38, 39);
   text-shadow: none;
 }

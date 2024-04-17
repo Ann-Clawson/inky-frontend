@@ -1,17 +1,19 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
 
 export function SignupShow(props) {
   return (
-    <div>
-      <h1>Who are you?</h1>
-      <Link to="/usersignup" onClick={props.onClose}>
-        User
-      </Link>
-      <br />
-      <Link to="/tattooersignup" onClick={props.onClose}>
-        Tattooer
-      </Link>
+    <div className="signup-modal">
+      <h2>
+        Are you joining our community as a <br />
+        <a href="/usersignup" onClick={props.onClose}>
+          User
+        </a>{" "}
+        or{" "}
+        <a href="/tattooersignup" onClick={props.onClose}>
+          Tattooer
+        </a>
+        ?
+      </h2>
     </div>
   );
 }
