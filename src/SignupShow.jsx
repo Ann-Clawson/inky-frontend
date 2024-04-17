@@ -6,7 +6,7 @@ export function SignupShow(props) {
       <h2>
         Are you joining our community as a <br />
         <a href="/usersignup" onClick={props.onClose}>
-          User
+          Client
         </a>{" "}
         or{" "}
         <a href="/tattooersignup" onClick={props.onClose}>
