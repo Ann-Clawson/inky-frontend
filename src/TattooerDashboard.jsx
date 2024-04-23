@@ -64,11 +64,10 @@ export function TattooerDashboard() {
                 <td>{application.friendly_created_at}</td>
                 <td>{application.amount}</td>
                 <td>
-                  {getUserName(application.tattooer_id, "first_name")}{" "}
-                  {getUserName(application.tattooer_id, "last_name")}
+                  {getUserName(application.user_id, "first_name")} {getUserName(application.user_id, "last_name")}
                 </td>
-                <td>{getUserName(application.tattooer_id, "phone_number")}</td>
-                <td>{getUserName(application.tattooer_id, "email")}</td>
+                <td>{getUserName(application.user_id, "phone_number")}</td>
+                <td>{getUserName(application.user_id, "email")}</td>
                 <td>{application.description}</td>
                 <td>Payment Received</td>
               </tr>
