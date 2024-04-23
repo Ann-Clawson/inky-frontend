@@ -18,12 +18,12 @@ export function Application(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // function getRandomArbitrary(min, max) {
-    //   return Math.floor(Math.random() * (max - min) + min);
-    // }
-    // const score = getRandomArbitrary(400, 850);
+    function getRandomArbitrary(min, max) {
+      return Math.floor(Math.random() * (max - min) + min);
+    }
+    const score = getRandomArbitrary(400, 850);
 
-    const score = 600;
+    // const score = 600;
 
     const isApproved = score >= 600;
     setApprovedValue(isApproved ? "true" : "false");
@@ -62,7 +62,7 @@ export function Application(props) {
     if (isApproved) {
       setResults(
         <>
-          <h2>Approved!</h2>
+          <h2 className="app-review">Approved!</h2>
           <h3>
             Your terms: ${amount}, {numOfMonths} months, {interest * 100}% interest rate, monthly payments of ${payment}
             .
@@ -73,7 +73,7 @@ export function Application(props) {
         </>
       );
     } else {
-      setResults(<h3>Your application requires further review. You will receive a letter from us, one day.</h3>);
+      setResults(<h3 className="app-review">Your application requires further review.</h3>);
     }
   };
 
