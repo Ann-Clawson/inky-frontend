@@ -89,7 +89,7 @@ export function UserLogin() {
 
   return (
     <div>
-      <h1>User Log In</h1>
+      <h1>Log In</h1>
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
