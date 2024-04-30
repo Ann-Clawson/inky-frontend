@@ -50,6 +50,13 @@ export function UserDashboard(props) {
     setIsProfileShowVisible(false);
   };
 
+  const handleUpdateUser = (id, params) => {
+    axios.patch(`http://localhost:3000/users/${id}.json`, params).then((response) => {
+      setCurrentUser(response.data);
+      setIsProfileShowVisible(false);
+    });
+  };
+
   return (
     <div className="dashboard">
       <div className="user-profile-view-btn">
@@ -95,8 +102,8 @@ export function UserDashboard(props) {
         </table>
       </div>
       <Modal show={isProfileShowVisible} onClose={handleProfileClose}>
-        <ProfileShow user={currentUser} />
-        {/* <ProfileShow onUpdateUser={handleUpdateUser} user={currentUser} /> */}
+        {/* <ProfileShow user={currentUser} /> */}
+        <ProfileShow onUpdateUser={handleUpdateUser} user={currentUser} />
       </Modal>
     </div>
   );
