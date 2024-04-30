@@ -26,11 +26,10 @@ export function ProfileShow(props) {
           Email: <input name="email" type="email" defaultValue={props.user.email} />
         </div>
         <div>
-          Password: <input name="password" type="password" defaultValue={props.user.password} />
+          Password: <input name="password" type="password" />
         </div>
         <div>
-          Password confirmation:{" "}
-          <input name="password_confirmation" type="password" defaultValue={props.user.password_confirmation} />
+          Password confirmation: <input name="password_confirmation" type="password" />
         </div>
         <button type="submit">Save Changes</button>
       </form>
