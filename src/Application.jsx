@@ -18,9 +18,9 @@ export function Application(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    function getRandomArbitrary(min, max) {
-      return Math.floor(Math.random() * (max - min) + min);
-    }
+    // function getRandomArbitrary(min, max) {
+    //   return Math.floor(Math.random() * (max - min) + min);
+    // }
     // const score = getRandomArbitrary(400, 850);
 
     const score = 600;
