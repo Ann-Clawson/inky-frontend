@@ -22,9 +22,9 @@ export function Content() {
 
   // const [isProfileShowVisible, setIsProfileShowVisible] = useState(false);
 
-  const handleProfileShow = () => {
-    setIsProfileShowVisible(true);
-  };
+  // const handleProfileShow = () => {
+  //   setIsProfileShowVisible(true);
+  // };
 
   // const handleProfileClose = () => {
   //   setIsProfileShowVisible(false);
@@ -40,7 +40,7 @@ export function Content() {
         <Route path="/usersignup" element={<UserSignup />} />
         <Route path="/tattooersignup" element={<TattooerSignup />} />
         <Route path="/apply" element={<Application onCreateApplication={handleCreateApplication} />} />
-        <Route path="/userdashboard" element={<UserDashboard handleProfileShow={handleProfileShow} />} />
+        <Route path="/userdashboard" element={<UserDashboard />} />
         <Route path="/tattooerdashboard" element={<TattooerDashboard />} />
       </Routes>
     </div>
