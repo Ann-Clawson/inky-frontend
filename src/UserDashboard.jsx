@@ -51,7 +51,7 @@ export function UserDashboard(props) {
   };
 
   const handleUpdateUser = (id, params) => {
-    axios.patch(`http://localhost:3000/users/${id}.json`, params).then((response) => {
+    axios.patch(`${import.meta.env.VITE_APP_API_URL}/users/${id}.json`, params).then((response) => {
       setCurrentUser(response.data);
       setIsProfileShowVisible(false);
     });
@@ -102,7 +102,6 @@ export function UserDashboard(props) {
         </table>
       </div>
       <Modal show={isProfileShowVisible} onClose={handleProfileClose}>
-        {/* <ProfileShow user={currentUser} /> */}
         <ProfileShow onUpdateUser={handleUpdateUser} user={currentUser} />
       </Modal>
     </div>
