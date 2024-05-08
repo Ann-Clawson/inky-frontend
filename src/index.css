@@ -276,9 +276,9 @@ footer {
 
 .login-modal form {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* Adjust the ratio between label and input as needed */
-  gap: 10px; /* Spacing between rows and columns */
-  align-items: center; /* Aligns items vertically within their cell */
+  grid-template-columns: 1fr 2fr; 
+  gap: 10px; 
+  align-items: center; 
 }
 
 .login-modal form div {
