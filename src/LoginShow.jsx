@@ -48,7 +48,7 @@ export function LoginShow() {
 
   return (
     <div>
-      <h1>User Log In</h1>
+      <h2>Welcome back!</h2>
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
