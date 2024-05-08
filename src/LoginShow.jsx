@@ -65,7 +65,9 @@ export function LoginShow() {
           Are you a tattooer?{" "}
           <input type="checkbox" onClick={() => (isTattooer ? setIsTattooer(false) : setIsTattooer(true))} />
         </div>
-        <button type="submit">Login</button>
+        <button className="btn btn-outline-info btn-bnr login" type="submit">
+          Login
+        </button>
       </form>
     </div>
   );
