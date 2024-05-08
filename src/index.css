@@ -273,4 +273,15 @@ footer {
   align-items: center;
   justify-content: center;
 }
+
+.login-modal form {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Adjust the ratio between label and input as needed */
+  gap: 10px; /* Spacing between rows and columns */
+  align-items: center; /* Aligns items vertically within their cell */
+}
+
+.login-modal form div {
+  display: contents; /* Makes the div not affect layout, letting label and input directly partake in the grid */
+}
 /* LOGIN END */
