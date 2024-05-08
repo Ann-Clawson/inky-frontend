@@ -47,7 +47,7 @@ export function LoginShow() {
   };
 
   return (
-    <div>
+    <div className="login-modal">
       <h2>Welcome back!</h2>
       <ul>
         {errors.map((error) => (

@@ -266,4 +266,11 @@ footer {
 .login {
   color: rgba(52, 51, 51);
 }
+
+.login-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 /* LOGIN END */
