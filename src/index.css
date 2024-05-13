@@ -125,8 +125,8 @@ html, body {
   padding-bottom: 35px;
 }
 
-.view-profile-button {
-  color: rgba(52, 51, 51);
+.view-profile-btn Link{
+  text-decoration: none !important;
 }
 
 /* END DASHBOARD */
