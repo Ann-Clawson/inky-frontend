@@ -284,4 +284,9 @@ footer {
 .login-modal form div {
   display: contents; /* Makes the div not affect layout, letting label and input directly partake in the grid */
 }
+
+.login-checkbox {
+margin-left: -260px;
+}
+
 /* LOGIN END */
