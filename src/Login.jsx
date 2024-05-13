@@ -10,6 +10,7 @@ export function UserLogin() {
   const [errors, setErrors] = useState([]);
   const [isTattooer, setIsTattooer] = useState(false);
 
+  // eslint-disable-next-line no-unused-vars
   const handleUserLogInSubmit = (event) => {
     event.preventDefault();
     setErrors([]);
@@ -44,7 +45,7 @@ export function UserLogin() {
         });
     }
 
-    //log out due to inactivity in progress
+    // log out due to inactivity in progress
     // const LogoutDueToInactivity = () => {
     //   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
@@ -67,46 +68,48 @@ export function UserLogin() {
     //     };
 
     //     const handleLogout = () => {
-    //
     //       setIsLoggedIn(false);
     //       //redirect the user to the login page
     //     };
-    //
-    //     window.addEventListener('mousemove', handleUserActivity);
-    //     window.addEventListener('keydown', handleUserActivity);
+
+    //     window.addEventListener("mousemove", handleUserActivity);
+    //     window.addEventListener("keydown", handleUserActivity);
 
     //     // Set up the initial inactivity timeout
     //     resetInactivityTimeout();
 
     //     // Clean up event listeners
     //     return () => {
-    //       window.removeEventListener('mousemove', handleUserActivity);
-    //       window.removeEventListener('keydown', handleUserActivity);
+    //       window.removeEventListener("mousemove", handleUserActivity);
+    //       window.removeEventListener("keydown", handleUserActivity);
     //       clearTimeout(inactivityTimeout);
     //     };
     //   }, []);
-  };
+    // };
 
-  return (
-    <div>
-      <h1>Log In</h1>
-      <ul>
-        {errors.map((error) => (
-          <li key={error}>{error}</li>
-        ))}
-      </ul>
-      <form onSubmit={handleUserLogInSubmit}>
-        <div>
-          Email: <input name="email" type="email" />
-        </div>
-        <div>
-          Password: <input name="password" type="password" />
-        </div>
-        <div>
-          Are you a tattooer? <input type="checkbox" onClick={() => setIsTattooer(true)} />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-    </div>
-  );
+    // useEffect(LogoutDueToInactivity, []);
+
+    return (
+      <div>
+        <h1>Log In</h1>
+        <ul>
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
+        </ul>
+        <form onSubmit={handleUserLogInSubmit}>
+          <div>
+            Email: <input name="email" type="email" />
+          </div>
+          <div>
+            Password: <input name="password" type="password" />
+          </div>
+          <div>
+            Are you a tattooer? <input type="checkbox" onClick={() => setIsTattooer(true)} />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    );
+  };
 }
