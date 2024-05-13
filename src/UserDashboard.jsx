@@ -60,7 +60,7 @@ export function UserDashboard(props) {
   return (
     <div className="dashboard">
       <div className="user-profile-view-btn-container">
-        <button className="view-profile-button">
+        <button className="btn btn-outline-info btn-bnr login">
           <Link onClick={() => handleProfileShow()}>View Profile</Link>
         </button>
       </div>
