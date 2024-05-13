@@ -59,8 +59,8 @@ export function UserDashboard(props) {
 
   return (
     <div className="dashboard">
-      <div className="user-profile-view-btn">
-        <button>
+      <div className="user-profile-view-btn-container">
+        <button className="view-profile-button">
           <Link onClick={() => handleProfileShow()}>View Profile</Link>
         </button>
       </div>
