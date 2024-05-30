@@ -21,7 +21,8 @@ export function UserDashboard(props) {
 
   const getApplications = () => {
     axios.get(`${import.meta.env.VITE_APP_API_URL}/applications.json`).then((response) => {
-      setApplications(response.data.reverse());
+      let apps = response.data;
+      setApplications(apps.sort((a, b) => b.id - a.id));
     });
   };
 
