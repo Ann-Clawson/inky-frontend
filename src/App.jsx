@@ -40,10 +40,13 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app-container">
       <BrowserRouter>
         <Header onSignupShow={handleSignupShow} onApplyShow={handleApplyShow} onLoginShow={handleLoginShow} />
-        <Content />
+        <div className="content">
+          <Content />
+        </div>
+
         <Footer />
         <Modal show={isSignupShowVisible} onClose={handleSignupClose}>
           <SignupShow onClose={handleSignupClose} />

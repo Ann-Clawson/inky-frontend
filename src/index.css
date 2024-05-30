@@ -1,12 +1,23 @@
-.copyright {
-  font-size: 12px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 html, body {
   margin: 0px;
   height: 100%;
-  /* overflow: auto;  */
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
 
 /* BEGIN NAV BAR */
 .nav-bar{
@@ -85,6 +96,10 @@ html, body {
 .for-everyone strong {
   color: rgb(138, 223, 244);
   text-shadow: 2px 2px 3px black;
+}
+
+.copyright {
+  font-size: 12px;
 }
 
 .btn-bnr {
@@ -254,7 +269,6 @@ input::-webkit-inner-spin-button {
 footer {
   text-align: center;
   padding: 13px 0px 1px;
-  bottom: 0%;
   width: 100%;
   border-top: 1px solid rgb(237, 236, 236);
   box-shadow: -2px 0 4px rgba(0, 0, 0, 0.2);
