@@ -26,8 +26,6 @@ export function UserDashboard(props) {
     });
   };
 
-  console.log(applications);
-
   const handleIndexTattooers = () => {
     axios.get(`${import.meta.env.VITE_APP_API_URL}/tattooers.json`).then((response) => {
       setTattooers(response.data);
