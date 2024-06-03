@@ -31,7 +31,7 @@ export function ProfileShow(props) {
         <div>
           Password confirmation: <input name="password_confirmation" type="password" />
         </div>
-        <button type="submit" className="btn btn-outline-info btn-bnr login">
+        <button type="submit" className="btn btn-outline-info btn-bnr login profile-button">
           Save Changes
         </button>
       </form>
