@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Modal } from "./Modal";
 import { ProfileShow } from "./ProfileShow";
 
@@ -11,7 +11,7 @@ export function UserDashboard(props) {
   const [applications, setApplications] = useState([]);
   const [tattooers, setTattooers] = useState([]);
 
-  let userID = localStorage.getItem("user_id");
+  // let userID = localStorage.getItem("user_id");
 
   const getUser = (userID) => {
     axios.get(`${import.meta.env.VITE_APP_API_URL}/users/${userID}.json`).then((response) => {
