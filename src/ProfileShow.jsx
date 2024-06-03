@@ -7,7 +7,7 @@ export function ProfileShow(props) {
     event.target.reset();
   };
   return (
-    <div>
+    <div className="login-modal">
       <h1 onClick={props.onClose}>{props.user.first_name}</h1>
       <form onSubmit={handleUserUpdateSubmit}>
         <div>
@@ -31,7 +31,9 @@ export function ProfileShow(props) {
         <div>
           Password confirmation: <input name="password_confirmation" type="password" />
         </div>
-        <button type="submit">Save Changes</button>
+        <button type="submit" className="btn btn-outline-info btn-bnr login">
+          Save Changes
+        </button>
       </form>
     </div>
   );
