@@ -19,7 +19,7 @@ export function TattooerDashboard() {
 
   const getApplications = () => {
     axios.get(`${import.meta.env.VITE_APP_API_URL}/applications.json`).then((response) => {
-      setApplications(response.data.reverse());
+      setApplications(response.data.sort((a, b) => b.id - a.id));
     });
   };
 
