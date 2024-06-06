@@ -129,6 +129,7 @@ html, body {
   /* display: block; */
   justify-content: center;
   height: 100% !important;
+  padding-bottom: 100px;
 }
 
 .dash-table {
