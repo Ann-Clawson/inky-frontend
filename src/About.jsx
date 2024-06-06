@@ -11,7 +11,7 @@ export function About() {
   } else {
     aboutButton = (
       <a href="/apply">
-        <button type="button" className="btn btn-outline-info btn-abt">
+        <button type="button" className="btn btn-outline-info btn-abt apply-btn">
           <i>Submit an application</i>
         </button>
       </a>
