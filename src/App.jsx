@@ -46,8 +46,10 @@ function App() {
         <div className="content">
           <Content />
         </div>
+        <div>
+          <Footer />
+        </div>
 
-        <Footer />
         <Modal show={isSignupShowVisible} onClose={handleSignupClose}>
           <SignupShow onClose={handleSignupClose} />
         </Modal>
