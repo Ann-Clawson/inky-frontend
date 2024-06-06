@@ -124,7 +124,7 @@ export function Application(props) {
         </div>
         <input type="hidden" name="approved" value={approvedValue} />
         <input type="hidden" name="interest_rate" value={interestRate} />
-        <button type="submit" className="btn btn-outline-info btn-bnr login view-profile-btn">
+        <button type="submit" className="btn btn-outline-info btn-bnr login view-profile-btn apply-btn">
           Submit
         </button>
       </form>

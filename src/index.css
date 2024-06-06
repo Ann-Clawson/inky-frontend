@@ -203,6 +203,10 @@ html, body {
 .app-form {
   padding-top: 30PX;
 }
+
+.apply-btn {
+  border:1px solid black;
+}
 /* APPLICATION END */
 
 /* USER SIGNUP BEGIN */
