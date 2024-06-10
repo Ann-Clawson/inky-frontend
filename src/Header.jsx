@@ -15,7 +15,9 @@ export function Header(props) {
   } else if (localStorage.user_id) {
     authenticationLinks = (
       <>
-        <Link to="/apply">Apply</Link>
+        <Link to="/apply" onClick={() => this.forceUpdate()}>
+          Apply
+        </Link>
         <Link to="/userdashboard">Dashboard</Link>
         <Logout />
       </>
