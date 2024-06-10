@@ -25,6 +25,7 @@ export function Header(props) {
   } else {
     authenticationLinks = (
       <>
+        <Link to="/tattooerdashboard">Dashboard</Link>
         <Logout />
       </>
     );
