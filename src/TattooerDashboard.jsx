@@ -15,12 +15,6 @@ export function TattooerDashboard() {
   // eslint-disable-next-line no-unused-vars
   // let tattooerID = localStorage.getItem("tattooer_id");
 
-  const getTattooer = (tattooerID) => {
-    axios.get(`${import.meta.env.VITE_APP_API_URL}/tattooers/${tattooerID}.json`).then((response) => {
-      setCurrentTattooer(response.data);
-    });
-  };
-
   const getApplications = () => {
     axios.get(`${import.meta.env.VITE_APP_API_URL}/applications.json`).then((response) => {
       setApplications(response.data.sort((a, b) => b.id - a.id));
@@ -36,6 +30,12 @@ export function TattooerDashboard() {
   const getUserName = (userId, nameType) => {
     const user = users.find((u) => u.id === userId);
     return user ? user[nameType] : "Unknown user";
+  };
+
+  const getTattooer = (tattooerID) => {
+    axios.get(`${import.meta.env.VITE_APP_API_URL}/tattooers/${tattooerID}.json`).then((response) => {
+      setCurrentTattooer(response.data);
+    });
   };
 
   const handleUpdateTattooer = (id, params) => {
