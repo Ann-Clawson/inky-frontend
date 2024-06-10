@@ -9,9 +9,6 @@ import { Application } from "./Application";
 import { Routes, Route } from "react-router-dom";
 import { UserDashboard } from "./UserDashboard";
 import { TattooerDashboard } from "./TattooerDashboard";
-// import { Modal } from "./Modal";
-// import { useState } from "react";
-// import { ProfileShow } from "./ProfileShow";
 
 export function Content() {
   const handleCreateApplication = (params) => {
@@ -19,16 +16,6 @@ export function Content() {
       console.log(response.data);
     });
   };
-
-  // const [isProfileShowVisible, setIsProfileShowVisible] = useState(false);
-
-  // const handleProfileShow = () => {
-  //   setIsProfileShowVisible(true);
-  // };
-
-  // const handleProfileClose = () => {
-  //   setIsProfileShowVisible(false);
-  // };
 
   return (
     <div>
