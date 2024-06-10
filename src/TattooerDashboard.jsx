@@ -7,6 +7,10 @@ export function TattooerDashboard() {
   const [currentTattooer, setCurrentTattooer] = useState({});
   const [applications, setApplications] = useState([]);
   const [users, setUsers] = useState([]);
+  const [isProfileShowVisible, setIsProfileShowVisible] = useState(false);
+
+  const handleProfileShow = () => setIsProfileShowVisible(true);
+  const handleProfileClose = () => setIsProfileShowVisible(false);
 
   // eslint-disable-next-line no-unused-vars
   // let tattooerID = localStorage.getItem("tattooer_id");
@@ -29,25 +33,9 @@ export function TattooerDashboard() {
     });
   };
 
-  useEffect(getTattooer, []);
-  useEffect(getApplications, []);
-  useEffect(handleIndexUsers, []);
-
-  console.log(applications);
-
   const getUserName = (userId, nameType) => {
     const user = users.find((u) => u.id === userId);
     return user ? user[nameType] : "Unknown user";
-  };
-
-  const [isProfileShowVisible, setIsProfileShowVisible] = useState(false);
-
-  const handleProfileShow = () => {
-    setIsProfileShowVisible(true);
-  };
-
-  const handleProfileClose = () => {
-    setIsProfileShowVisible(false);
   };
 
   const handleUpdateTattooer = (id, params) => {
@@ -56,6 +44,10 @@ export function TattooerDashboard() {
       setIsProfileShowVisible(false);
     });
   };
+
+  useEffect(getTattooer, []);
+  useEffect(getApplications, []);
+  useEffect(handleIndexUsers, []);
 
   return (
     <div className="dashboard">
