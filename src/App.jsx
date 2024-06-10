@@ -10,34 +10,15 @@ import { useState } from "react";
 
 function App() {
   const [isSignupShowVisible, setIsSignupShowVisible] = useState(false);
-
-  const handleSignupShow = () => {
-    setIsSignupShowVisible(true);
-  };
-
-  const handleSignupClose = () => {
-    setIsSignupShowVisible(false);
-  };
-
   const [isApplyShowVisible, setIsApplyShowVisible] = useState(false);
-
-  const handleApplyShow = () => {
-    setIsApplyShowVisible(true);
-  };
-
-  const handleApplyClose = () => {
-    setIsApplyShowVisible(false);
-  };
-
   const [isLoginShowVisible, setIsLoginShowVisible] = useState(false);
 
-  const handleLoginShow = () => {
-    setIsLoginShowVisible(true);
-  };
-
-  const handleLoginClose = () => {
-    setIsLoginShowVisible(false);
-  };
+  const handleSignupShow = () => setIsSignupShowVisible(true);
+  const handleSignupClose = () => setIsSignupShowVisible(false);
+  const handleApplyShow = () => setIsApplyShowVisible(true);
+  const handleApplyClose = () => setIsApplyShowVisible(false);
+  const handleLoginShow = () => setIsLoginShowVisible(true);
+  const handleLoginClose = () => setIsLoginShowVisible(false);
 
   return (
     <div className="app-container">
