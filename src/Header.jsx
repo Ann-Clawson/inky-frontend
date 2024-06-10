@@ -7,21 +7,15 @@ export function Header(props) {
   if (localStorage.jwt === undefined) {
     authenticationLinks = (
       <>
-        <Link onClick={() => props.onApplyShow()}>Apply</Link> <Link onClick={() => props.onSignupShow()}>Sign Up</Link>{" "}
+        <Link onClick={() => props.onApplyShow()}>Apply</Link>
+        <Link onClick={() => props.onSignupShow()}>Sign Up</Link>
         <Link onClick={() => props.onLoginShow()}>Log In</Link>
       </>
     );
   } else if (localStorage.user_id) {
     authenticationLinks = (
       <>
-        <Link
-          to="/apply"
-          onClick={() => {
-            this.forceUpdate();
-          }}
-        >
-          Apply
-        </Link>{" "}
+        <Link to="/apply">Apply</Link>
         <Link to="/userdashboard">Dashboard</Link>
         <Logout />
       </>
