@@ -126,7 +126,6 @@ html, body {
 
 /* BEGIN DASHBOARD */
 .dashboard {
-  /* display: block; */
   justify-content: center;
   height: 100% !important;
   padding-bottom: 100px;
@@ -215,7 +214,6 @@ html, body {
 .user-signup {
   display: flex;
   justify-content: center;
-  /* padding: 20px; */
   height: 100%;
 }
 
@@ -223,7 +221,6 @@ html, body {
   width: 100%;
   max-width: 400px;
   margin-bottom: 50px;
-
 }
 
 .signup-form-container form div {
@@ -305,5 +302,4 @@ footer {
 .login-checkbox {
 margin-left: -260px;
 }
-
 /* LOGIN END */
