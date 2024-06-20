@@ -7,6 +7,7 @@ import { ApplyShow } from "./ApplyShow";
 import { LoginShow } from "./LoginShow";
 import { BrowserRouter } from "react-router-dom";
 import { useState } from "react";
+import { IdleTimerComponent } from "react-idle-timer";
 
 function App() {
   const [isSignupShowVisible, setIsSignupShowVisible] = useState(false);
