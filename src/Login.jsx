@@ -45,50 +45,6 @@ export function UserLogin() {
         });
     }
 
-    // log out due to inactivity in progress
-    // const LogoutDueToInactivity = () => {
-    //   const [isLoggedIn, setIsLoggedIn] = useState(true);
-
-    //   useEffect(() => {
-    //     let inactivityTimeout;
-
-    //     const resetInactivityTimeout = () => {
-    //       if (inactivityTimeout) {
-    //         clearTimeout(inactivityTimeout);
-    //       }
-
-    //       inactivityTimeout = setTimeout(() => {
-    //         // Log out the user
-    //         handleLogout();
-    //       }, 300000); // 5 minutes in milliseconds
-    //     };
-
-    //     const handleUserActivity = () => {
-    //       resetInactivityTimeout();
-    //     };
-
-    //     const handleLogout = () => {
-    //       setIsLoggedIn(false);
-    //       //redirect the user to the login page
-    //     };
-
-    //     window.addEventListener("mousemove", handleUserActivity);
-    //     window.addEventListener("keydown", handleUserActivity);
-
-    //     // Set up the initial inactivity timeout
-    //     resetInactivityTimeout();
-
-    //     // Clean up event listeners
-    //     return () => {
-    //       window.removeEventListener("mousemove", handleUserActivity);
-    //       window.removeEventListener("keydown", handleUserActivity);
-    //       clearTimeout(inactivityTimeout);
-    //     };
-    //   }, []);
-    // };
-
-    // useEffect(LogoutDueToInactivity, []);
-
     return (
       <div>
         <h1>Log In</h1>
