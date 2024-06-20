@@ -28,7 +28,6 @@ function App() {
           <Content />
         </div>
         <Footer />
-
         <Modal show={isSignupShowVisible} onClose={handleSignupClose}>
           <SignupShow onClose={handleSignupClose} />
         </Modal>
