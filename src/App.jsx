@@ -29,7 +29,7 @@ function App() {
     // setIsLoggedIn(true);
     axios.defaults.headers.common["Authorization"] = `Bearer ${jwt}`;
   }
-  // console.log(isLoggedIn);
+  console.log(isLoggedIn);
 
   return (
     <div className="app-container">
