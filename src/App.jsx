@@ -11,15 +11,10 @@ import { useState } from "react";
 import axios from "axios";
 
 function App() {
-  const jwt = localStorage.getItem("jwt");
-  // console.log(jwt);
-  if (jwt) {
-    axios.defaults.headers.common["Authorization"] = `Bearer ${jwt}`;
-  }
-
   const [isSignupShowVisible, setIsSignupShowVisible] = useState(false);
   const [isApplyShowVisible, setIsApplyShowVisible] = useState(false);
   const [isLoginShowVisible, setIsLoginShowVisible] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleSignupShow = () => setIsSignupShowVisible(true);
   const handleSignupClose = () => setIsSignupShowVisible(false);
@@ -27,6 +22,14 @@ function App() {
   const handleApplyClose = () => setIsApplyShowVisible(false);
   const handleLoginShow = () => setIsLoginShowVisible(true);
   const handleLoginClose = () => setIsLoginShowVisible(false);
+
+  const jwt = localStorage.getItem("jwt");
+  console.log(jwt);
+  if (jwt) {
+    // setIsLoggedIn(true);
+    axios.defaults.headers.common["Authorization"] = `Bearer ${jwt}`;
+  }
+  // console.log(isLoggedIn);
 
   return (
     <div className="app-container">
@@ -44,6 +47,9 @@ function App() {
         </Modal>
         <Modal show={isLoginShowVisible} onClose={handleLoginClose}>
           <LoginShow onClose={handleLoginClose} />
+        </Modal>
+        <Modal>
+          <ActivityShow />
         </Modal>
       </BrowserRouter>
     </div>
