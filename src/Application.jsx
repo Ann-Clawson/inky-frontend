@@ -35,7 +35,9 @@ export function Application(props) {
     const amount = parseInt(amountInput.replace(/[^\d]/g, ""), 10);
 
     const numOfMonths = parseInt(params.get("number_of_months"));
+
     let interest;
+
     if (score < 700 && numOfMonths === 6) {
       interest = 0.1;
     } else if (score < 700 && numOfMonths === 12) {
