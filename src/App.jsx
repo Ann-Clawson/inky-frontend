@@ -7,9 +7,15 @@ import { ApplyShow } from "./ApplyShow";
 import { LoginShow } from "./LoginShow";
 import { BrowserRouter } from "react-router-dom";
 import { useState } from "react";
-import { IdleTimerComponent } from "react-idle-timer";
+import axios from "axios";
 
 function App() {
+  const jwt = localStorage.getItem("jwt");
+  // console.log(jwt);
+  if (jwt) {
+    axios.defaults.headers.common["Authorization"] = `Bearer ${jwt}`;
+  }
+
   const [isSignupShowVisible, setIsSignupShowVisible] = useState(false);
   const [isApplyShowVisible, setIsApplyShowVisible] = useState(false);
   const [isLoginShowVisible, setIsLoginShowVisible] = useState(false);
