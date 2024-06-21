@@ -8,15 +8,13 @@ import { SignupShow } from "./SignupShow";
 import { BrowserRouter } from "react-router-dom";
 import { Modal } from "./Modal";
 import { useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 import { useIdleTimer } from "react-idle-timer";
 
 function App() {
   const [isSignupShowVisible, setIsSignupShowVisible] = useState(false);
   const [isApplyShowVisible, setIsApplyShowVisible] = useState(false);
   const [isLoginShowVisible, setIsLoginShowVisible] = useState(false);
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const [isIdle, setIsIdle] = useState(false);
   const [isIdleShow, setIsIdleShow] = useState(false);
 
   const handleSignupShow = () => setIsSignupShowVisible(true);
@@ -29,6 +27,11 @@ function App() {
 
   const handleOnIdle = () => {
     console.log("User has been idle for 5 seconds");
+    delete axios.defaults.headers.common["Authorization"];
+    localStorage.removeItem("jwt");
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("tattooer_id");
+    window.location.href = "/";
     setIsIdleShow(true);
   };
   // eslint-disable-next-line no-unused-vars
