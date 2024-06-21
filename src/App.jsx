@@ -1,20 +1,22 @@
 import { Header } from "./Header";
 import { Content } from "./Content";
 import { Footer } from "./Footer";
-import { ActivityShow } from "./ActivityShow";
+// import { ActivityShow } from "./ActivityShow";
 import { ApplyShow } from "./ApplyShow";
 import { LoginShow } from "./LoginShow";
 import { SignupShow } from "./SignupShow";
 import { BrowserRouter } from "react-router-dom";
 import { Modal } from "./Modal";
 import { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+// import { useIdleTimer } from "react-idle-timer";
 
 function App() {
   const [isSignupShowVisible, setIsSignupShowVisible] = useState(false);
   const [isApplyShowVisible, setIsApplyShowVisible] = useState(false);
   const [isLoginShowVisible, setIsLoginShowVisible] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isIdle, setIsIdle] = useState(false);
 
   const handleSignupShow = () => setIsSignupShowVisible(true);
   const handleSignupClose = () => setIsSignupShowVisible(false);
@@ -23,13 +25,14 @@ function App() {
   const handleLoginShow = () => setIsLoginShowVisible(true);
   const handleLoginClose = () => setIsLoginShowVisible(false);
 
-  const jwt = localStorage.getItem("jwt");
-  console.log(jwt);
-  if (jwt) {
-    // setIsLoggedIn(true);
-    axios.defaults.headers.common["Authorization"] = `Bearer ${jwt}`;
-  }
-  console.log(isLoggedIn);
+  // const jwt = localStorage.getItem("jwt");
+  // console.log(jwt);
+  // if (jwt) {
+  //   axios.defaults.headers.common["Authorization"] = `Bearer ${jwt}`;
+  //   // setIsLoggedIn(true);
+  // }
+
+  // console.log(isLoggedIn);
 
   return (
     <div className="app-container">
@@ -48,9 +51,9 @@ function App() {
         <Modal show={isLoginShowVisible} onClose={handleLoginClose}>
           <LoginShow onClose={handleLoginClose} />
         </Modal>
-        <Modal>
+        {/* <Modal show={isIdle}>
           <ActivityShow />
-        </Modal>
+        </Modal> */}
       </BrowserRouter>
     </div>
   );
