@@ -1,15 +1,15 @@
 import { Header } from "./Header";
 import { Content } from "./Content";
 import { Footer } from "./Footer";
-// import { ActivityShow } from "./ActivityShow";
+import { ActivityShow } from "./ActivityShow";
 import { ApplyShow } from "./ApplyShow";
 import { LoginShow } from "./LoginShow";
 import { SignupShow } from "./SignupShow";
 import { BrowserRouter } from "react-router-dom";
 import { Modal } from "./Modal";
-import { useState } from "react";
+import { useRef, useState } from "react";
 // import axios from "axios";
-// import { useIdleTimer } from "react-idle-timer";
+import { useIdleTimer } from "react-idle-timer";
 
 function App() {
   const [isSignupShowVisible, setIsSignupShowVisible] = useState(false);
@@ -17,6 +17,7 @@ function App() {
   const [isLoginShowVisible, setIsLoginShowVisible] = useState(false);
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
   // const [isIdle, setIsIdle] = useState(false);
+  const [isIdleShow, setIsIdleShow] = useState(false);
 
   const handleSignupShow = () => setIsSignupShowVisible(true);
   const handleSignupClose = () => setIsSignupShowVisible(false);
@@ -24,6 +25,16 @@ function App() {
   const handleApplyClose = () => setIsApplyShowVisible(false);
   const handleLoginShow = () => setIsLoginShowVisible(true);
   const handleLoginClose = () => setIsLoginShowVisible(false);
+  const handleIdleClose = () => setIsIdleShow(false);
+
+  const handleOnIdle = () => {
+    console.log("User has been idle for 5 seconds");
+    setIsIdleShow(true);
+  };
+  const idleTimer = useIdleTimer({
+    timeout: 5000, // 5 seconds in milliseconds
+    onIdle: handleOnIdle,
+  });
 
   // const jwt = localStorage.getItem("jwt");
   // console.log(jwt);
@@ -33,6 +44,15 @@ function App() {
   // }
 
   // console.log(isLoggedIn);
+
+  // const IdleTimerRef = useRef(null);
+  // // const sessionTimeoutRef = useRef(null);
+
+  // const onIdle = () => {
+  //   setIsIdleShow(true);
+  //   console.log("You are idle for 5 seconds");
+  //   // sessionTimeoutRef.current = setTimeout(logOut, 5000);
+  // };
 
   return (
     <div className="app-container">
@@ -51,9 +71,10 @@ function App() {
         <Modal show={isLoginShowVisible} onClose={handleLoginClose}>
           <LoginShow onClose={handleLoginClose} />
         </Modal>
-        {/* <Modal show={isIdle}>
+
+        <Modal show={isIdleShow} onClose={handleIdleClose}>
           <ActivityShow />
-        </Modal> */}
+        </Modal>
       </BrowserRouter>
     </div>
   );
