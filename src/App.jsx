@@ -7,7 +7,7 @@ import { LoginShow } from "./LoginShow";
 import { SignupShow } from "./SignupShow";
 import { BrowserRouter } from "react-router-dom";
 import { Modal } from "./Modal";
-import { useRef, useState } from "react";
+import { useState } from "react";
 // import axios from "axios";
 import { useIdleTimer } from "react-idle-timer";
 
@@ -31,28 +31,26 @@ function App() {
     console.log("User has been idle for 5 seconds");
     setIsIdleShow(true);
   };
-  const idleTimer = useIdleTimer({
-    timeout: 5000, // 5 seconds in milliseconds
-    onIdle: handleOnIdle,
-  });
+  // eslint-disable-next-line no-unused-vars
+  // const idleTimer = useIdleTimer({
+  //   timeout: 5000, // 5 seconds in milliseconds
+  //   onIdle: handleOnIdle,
+  // });
 
-  // const jwt = localStorage.getItem("jwt");
+  const jwt = localStorage.getItem("jwt");
+
+  if (jwt) {
+    // eslint-disable-next-line no-unused-vars
+    const idleTimer = useIdleTimer({
+      timeout: 5000, // 5 seconds in milliseconds
+      onIdle: handleOnIdle,
+    });
+  }
+
   // console.log(jwt);
   // if (jwt) {
   //   axios.defaults.headers.common["Authorization"] = `Bearer ${jwt}`;
-  //   // setIsLoggedIn(true);
   // }
-
-  // console.log(isLoggedIn);
-
-  // const IdleTimerRef = useRef(null);
-  // // const sessionTimeoutRef = useRef(null);
-
-  // const onIdle = () => {
-  //   setIsIdleShow(true);
-  //   console.log("You are idle for 5 seconds");
-  //   // sessionTimeoutRef.current = setTimeout(logOut, 5000);
-  // };
 
   return (
     <div className="app-container">
