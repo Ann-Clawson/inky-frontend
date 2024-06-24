@@ -9,7 +9,6 @@ import { BrowserRouter } from "react-router-dom";
 import { Modal } from "./Modal";
 import { useState } from "react";
 import axios from "axios";
-// import { useIdleTimer } from "react-idle-timer";
 import IdleTimerComponent from "./IdleTimerComponent";
 
 function App() {
@@ -27,29 +26,16 @@ function App() {
   const handleIdleClose = () => setIsIdleShow(false);
 
   const handleOnIdle = () => {
-    console.log("User has been idle for 5 seconds");
     delete axios.defaults.headers.common["Authorization"];
     localStorage.removeItem("jwt");
     localStorage.removeItem("user_id");
     localStorage.removeItem("tattooer_id");
     window.location.href = "/";
     setIsIdleShow(true);
+    console.log("User has been idle for 5 seconds");
   };
 
   const jwt = localStorage.getItem("jwt");
-
-  // if (jwt) {
-  //   // eslint-disable-next-line no-unused-vars
-  //   const idleTimer = useIdleTimer({
-  //     timeout: 5000, // 5 seconds in milliseconds
-  //     onIdle: handleOnIdle,
-  //   });
-  // }
-
-  // console.log(jwt);
-  // if (jwt) {
-  //   axios.defaults.headers.common["Authorization"] = `Bearer ${jwt}`;
-  // }
 
   return (
     <div className="app-container">
