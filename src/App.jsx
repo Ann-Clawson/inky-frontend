@@ -9,7 +9,8 @@ import { BrowserRouter } from "react-router-dom";
 import { Modal } from "./Modal";
 import { useState } from "react";
 import axios from "axios";
-import { useIdleTimer } from "react-idle-timer";
+// import { useIdleTimer } from "react-idle-timer";
+import IdleTimerComponent from "./IdleTimerComponent";
 
 function App() {
   const [isSignupShowVisible, setIsSignupShowVisible] = useState(false);
@@ -37,13 +38,13 @@ function App() {
 
   const jwt = localStorage.getItem("jwt");
 
-  if (jwt) {
-    // eslint-disable-next-line no-unused-vars
-    const idleTimer = useIdleTimer({
-      timeout: 5000, // 5 seconds in milliseconds
-      onIdle: handleOnIdle,
-    });
-  }
+  // if (jwt) {
+  //   // eslint-disable-next-line no-unused-vars
+  //   const idleTimer = useIdleTimer({
+  //     timeout: 5000, // 5 seconds in milliseconds
+  //     onIdle: handleOnIdle,
+  //   });
+  // }
 
   // console.log(jwt);
   // if (jwt) {
@@ -72,6 +73,7 @@ function App() {
           <ActivityShow />
         </Modal>
       </BrowserRouter>
+      {jwt && <IdleTimerComponent onIdle={handleOnIdle} />}
     </div>
   );
 }
