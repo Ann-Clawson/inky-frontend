@@ -34,11 +34,6 @@ function App() {
     window.location.href = "/";
     setIsIdleShow(true);
   };
-  // eslint-disable-next-line no-unused-vars
-  // const idleTimer = useIdleTimer({
-  //   timeout: 5000, // 5 seconds in milliseconds
-  //   onIdle: handleOnIdle,
-  // });
 
   const jwt = localStorage.getItem("jwt");
 
