@@ -26,7 +26,7 @@ function App() {
   const handleIdleClose = () => setIsIdleShow(false);
 
   const handleOnIdle = () => {
-    delete axios.defaults.headers.common["Authorization"];
+    // delete axios.defaults.headers.common["Authorization"];
     localStorage.removeItem("jwt");
     localStorage.removeItem("user_id");
     localStorage.removeItem("tattooer_id");
@@ -36,6 +36,10 @@ function App() {
   };
 
   const jwt = localStorage.getItem("jwt");
+
+  // if (jwt) {
+  //   axios.defaults.headers.common["Authorization"] = `Bearer ${jwt}`;
+  // }
 
   return (
     <div className="app-container">
@@ -54,7 +58,6 @@ function App() {
         <Modal show={isLoginShowVisible} onClose={handleLoginClose}>
           <LoginShow onClose={handleLoginClose} />
         </Modal>
-
         <Modal show={isIdleShow} onClose={handleIdleClose}>
           <ActivityShow />
         </Modal>
