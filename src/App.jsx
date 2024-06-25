@@ -8,7 +8,7 @@ import { SignupShow } from "./SignupShow";
 import { BrowserRouter } from "react-router-dom";
 import { Modal } from "./Modal";
 import { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import IdleTimerComponent from "./IdleTimerComponent";
 
 function App() {
