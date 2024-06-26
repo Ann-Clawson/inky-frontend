@@ -7,7 +7,7 @@ import { LoginShow } from "./LoginShow";
 import { SignupShow } from "./SignupShow";
 import { BrowserRouter } from "react-router-dom";
 import { Modal } from "./Modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import axios from "axios";
 import IdleTimerComponent from "./IdleTimerComponent";
 
@@ -17,22 +17,29 @@ function App() {
   const [isLoginShowVisible, setIsLoginShowVisible] = useState(false);
   const [isIdleShow, setIsIdleShow] = useState(false);
 
+  useEffect(() => {
+    const idleModalVisible = localStorage.getItem("isIdleShow") === "true";
+    setIsIdleShow(idleModalVisible);
+  }, []);
+
   const handleSignupShow = () => setIsSignupShowVisible(true);
   const handleSignupClose = () => setIsSignupShowVisible(false);
   const handleApplyShow = () => setIsApplyShowVisible(true);
   const handleApplyClose = () => setIsApplyShowVisible(false);
   const handleLoginShow = () => setIsLoginShowVisible(true);
   const handleLoginClose = () => setIsLoginShowVisible(false);
-  const handleIdleClose = () => setIsIdleShow(false);
-
+  const handleIdleClose = () => {
+    setIsIdleShow(false);
+    localStorage.setItem("isIdleShow", false);
+  };
   const handleOnIdle = () => {
     // delete axios.defaults.headers.common["Authorization"];
     localStorage.removeItem("jwt");
     localStorage.removeItem("user_id");
     localStorage.removeItem("tattooer_id");
-    window.location.href = "/";
+    localStorage.setItem("isIdleShow", true);
     setIsIdleShow(true);
-    console.log("User has been idle for 5 seconds");
+    window.location.href = "/";
   };
 
   const jwt = localStorage.getItem("jwt");
