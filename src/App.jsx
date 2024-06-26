@@ -38,7 +38,6 @@ function App() {
     localStorage.removeItem("user_id");
     localStorage.removeItem("tattooer_id");
     localStorage.setItem("isIdleShow", true);
-    setIsIdleShow(true);
     window.location.href = "/";
   };
 
